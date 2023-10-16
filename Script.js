@@ -23,18 +23,23 @@ $(document).ready(function() {
         }
     }
 
-    // Función para obtener las opciones específicas de cada comida (puedes reemplazar esto con tus datos reales)
     function obtenerOpciones(comida) {
-        // Aquí puedes usar lógica condicional para obtener las opciones específicas de cada tipo de comida
-        // Por ejemplo, si es "Pastas", devuelves un array de opciones de pastas; si es "Comidas Caseras", devuelves un array de opciones de comidas caseras, etc.
-
-        // Ejemplo para Pastas
-        if (comida === 'Pastas') {
-            return [
-                { nombre: 'Ravioles de pollo y verdura', descripcion: 'Salsa a elección', precio: '$2800' },
-                { nombre: 'Otra opción de pastas', descripcion: 'Otra salsa', precio: '$XXXX' }
-            ];
-        }
-        // Puedes agregar más lógica para otros tipos de comida aquí...
+      const url = 'https://valencarballo1.github.io/LasPastasDeLaNona/menu.json'; // La URL es relativa a la ubicación de tu archivo HTML
+    
+      fetch(url)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(menu => {
+          if (menu.hasOwnProperty(comida)) {
+            console.log(menu[comida]);
+          } else {
+            console.log('Tipo de comida no encontrado');
+          }
+        })
+        .catch(error => console.error('Error fetching the menu:', error));
     }
 });

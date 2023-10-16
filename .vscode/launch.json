@@ -1,0 +1,11 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open Menu.html",
+            "file": "c:\\Users\\valen\\OneDrive\\Desktop\\Nona Menu\\Menu.html"
+        }
+    ]
+}

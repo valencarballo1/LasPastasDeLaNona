@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Las Pastas De La Nona</title>
+</head>
+<body>
+    <h1 class="text-center pt-2"> MENU </h1>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card" data-toggle="modal" data-target="#genericModal" data-comida="Pastas">
+                    <div class="card-body">
+                        <img src="https://s1.eestatic.com/2015/03/16/cocinillas/cocinillas_18508298_116119534_1706x960.jpg" class="img-fluid mb-2" alt="Pastas">
+                        <h5 class="card-title text-center">PASTAS</h5>
+                        <p class="card-text">Conoce nuestras pastas caseras para poder comer y disfrutar de alsla</p>
+                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalPastas">Ver Más</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://www.crushpixel.com/big-static12/preview4/top-view-image-traditional-georgian-832722.jpg" class="img-fluid mb-2" alt="Comidas Varias">
+                        <h5 class="card-title text-center">COMIDAS CASERAS</h5>
+                        <p class="card-text">Conoce nuestras comidas caseras para poder comer y disfrutar de alsla</p>
+                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalPastas">Ver Más</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://www.alqueria.com.co/sites/default/files/hamburguesa-con-amigos-y-salsa-de-champinones_0.jpg" class="img-fluid mb-2" alt="Hamburguesas">
+                        <h5 class="card-title text-center">Hamburguesas</h5>
+                        <p class="card-text">Conoce nuestras hamburguesas caseras smasheadas</p>
+                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalPastas">Ver Más</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://www.recetasnatura.com.ar/sites/default/files/655_x_475-_web_naturaempanadas_de_roastbeef_desmenuzado.jpg" class="img-fluid mb-2" alt="Hamburguesas">
+                        <h5 class="card-title text-center">Empanadas</h5>
+                        <p class="card-text">Conoce nuestras hamburguesas caseras smasheadas</p>
+                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalPastas">Ver Más</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Repite el mismo formato para las otras opciones del menú (Comidas Caseras, Hamburguesas, Pizzas, Empanadas) -->
+        </div>
+    </div>
+    
+    <!-- Modal genérico -->
+    <div class="modal modal-slide fade" id="genericModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="genericModalTitle">Comida</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <tbody id="genericModalBody">
+                            <!-- Aquí se llenará la tabla con las opciones específicas de cada comida -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</body>
+</html>

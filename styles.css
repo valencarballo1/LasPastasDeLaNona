@@ -1,0 +1,20 @@
+
+.card-body {
+    background-color: #F3E1E1; /* Color de fondo rosa cemento */
+}
+
+  .comida-item {
+    background-color: #F08080; /* Color de fondo rosa cemento */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  .modal-slide .modal-dialog {
+    transform: translateY(100%); /* El modal aparece escondido debajo de la página */
+    transition: transform 0.3s ease-out;
+}
+
+.modal-slide.show .modal-dialog {
+    transform: translateY(0); /* El modal se desliza hacia arriba y aparece en la página */
+}

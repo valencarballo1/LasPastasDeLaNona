@@ -1,10 +1,37 @@
 {
     "Pastas": [
       { "nombre": "Ravioles de pollo y verdura", "descripcion": "Salsa a elección", "precio": 2900 },
-      { "nombre": "Otra opción de pastas", "descripcion": "Otra salsa", "precio": 2800 }
+      { "nombre": "Ravioles de ricota", "descripcion": "Salsa a eleccion", "precio": 2800 },
+      { "nombre": "Ñoquis", "descripcion": "Salsa a eleccion", "precio": 2800 },
+      { "nombre": "Sorrentinos de jamon y muzzarella", "descripcion": "Salsa a eleccion", "precio": 2800 },
+      { "nombre": "Tallarines", "descripcion": "Salsa a eleccion", "precio": 2800 },
+      { "nombre": "Lasagna rellena", "descripcion": "Para una persona", "precio": 2800 }
+
     ],
     "Hamburguesas": [
-      { "nombre": "Americana", "descripcion": "Cheddar, Barbacoa, etc etc", "precio": 3500 },
-      { "nombre": "Italiana", "descripcion": "Descripción 2", "precio": 4000 }
+      { "nombre": "Americana", "descripcion": "Panceta, cheddar, salsa barbacoa, cebolla caramelizada", "precio": 3500 },
+      { "nombre": "Bacon", "descripcion": "Panceta, cheddar, huevo a la plancha", "precio": 3500 },
+      { "nombre": "Clasica", "descripcion": "Jamon, muzzarella, tomate, lechuga, huevo duro", "precio": 4000 },
+      { "nombre": "Crispy", "descripcion": "Pollo crispy, tomate, lechuga", "precio": 4000 },
+      { "nombre": "Italiana", "descripcion": "Provoleta, tomates secos, rucula", "precio": 4000 }
+    ],
+    "Empanadas": [
+      {"nombre": "Carne", "descripcion": "", "precio": 800},
+      {"nombre": "Pollo", "descripcion": "", "precio": 800},
+      {"nombre": "Jamon y queso", "descripcion": "", "precio": 800},
+      {"nombre": "Verdura", "descripcion": "", "precio": 800},
+      {"nombre": "Queso, tomate y albahca", "descripcion": "", "precio": 800}
+    ],
+    "Caseras": [
+      {"nombre": "Milanesa de carne", "descripcion": "Guarnicion a eleccion", "precio": 800},
+      {"nombre": "Milanesa napolitana", "descripcion": "Guarnicion a eleccion", "precio": 800},
+      {"nombre": "Suprema de pollo", "descripcion": "Guarnicion a eleccion", "precio": 800},
+      {"nombre": "Bondiola de cerdo", "descripcion": "Guarnicion a eleccion", "precio": 800},
+      {"nombre": "Tortilla", "descripcion": "Guarnicion a eleccion", "precio": 800},
+      {"nombre": "Bocadillos de acelga", "descripcion": "Guarnicion a eleccion", "precio": 800},
+      {"nombre": "Pollo al verdeo", "descripcion": "Guarnicion a eleccion", "precio": 800},
+      {"nombre": "Matambre a la pizza", "descripcion": "Guarnicion a eleccion", "precio": 800},
+      {"nombre": "Carne al horno", "descripcion": "Guarnicion a eleccion", "precio": 800},
+      {"nombre": "Desgustacion de milanesas", "descripcion": "6 milanesas con distintos gustos para probar", "precio": 800}
     ]
-  }
+}

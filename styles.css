@@ -4,7 +4,7 @@
 }
 
   .comida-item {
-    background-color: #F08080; /* Color de fondo rosa cemento */
+    background-color: #af6c6c; /* Color de fondo rosa cemento */
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -31,14 +31,6 @@
   border-bottom: 1px solid #ccc;
 }
 
-.menu-list li:last-child {
-  border-bottom: none;
-}
-
-.menu-list li span {
+td{
   font-weight: bold;
-}
-
-.menu-list li .price {
-  color: green;
 }

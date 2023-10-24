@@ -4,9 +4,9 @@ $(document).ready(function() {
 
   });
 
-  $('.card').click(function() {
+  $('.generoModal').click(function() {
     let comida = $(this).attr('data-comida'); // Obtiene el tipo de comida desde el atributo data-comida
-    $('#genericModalTitle').text(comida); // Actualiza el título del modal con el tipo de comida seleccionado
+    // $('#genericModalTitle').text(comida); // Actualiza el título del modal con el tipo de comida seleccionado
     llenarModal(comida); // Llena el contenido del modal según el tipo de comida seleccionado
 });
 

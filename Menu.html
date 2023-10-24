@@ -11,59 +11,64 @@
     <title>Las Pastas De La Nona</title>
 </head>
 <body>
-    <h1 class="text-center pt-2">MENU</h1>
-
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-md-4 mb-4">
-            <div class="card" data-toggle="modal" data-target="#genericModal" data-comida="Pastas">
-                <img src="https://s1.eestatic.com/2015/03/16/cocinillas/cocinillas_18508298_116119534_1706x960.jpg" class="card-img-top" alt="Pastas">
-                <div class="card-body">
-                    <h5 class="card-title text-center">PASTAS</h5>
-                    <p class="card-text text-center">Conoce nuestras pastas caseras para poder comer y disfrutar de alsla</p>
-                    <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#genericModal" data-comida="Pastas">Ver Más</button>
+    <div class="card d-flex flex-column align-items-center">
+        <div class="col-md-1 col-sm-3 col-4 cabecera">
+            <a href="#">
+                <img class="card-img-top" src="./Img/Logo.png" alt="" />
+            </a>
+        </div>
+        <div class="card-body d-flex flex-column col-sm-12 col-md-12">
+            <h3 class="card-title text-center">NUESTRO MENU</h3>
+            <div class="text-secondary text-center">Conoce todas nuestras comidas para disfrutar dentro de nuestro local.</div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4 mb-2">
+                    <div class="generoModal" data-toggle="modal" data-target="#genericModal" data-comida="Pastas">
+                        <img src="https://s1.eestatic.com/2015/03/16/cocinillas/cocinillas_18508298_116119534_1706x960.jpg" class="card-img-top" alt="Pastas">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">PASTAS</h5>
+                            <p class="card-text text-center">Conoce nuestras pastas caseras para poder comer y disfrutar de alsla</p>
+                            <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#genericModal" data-comida="Pastas">Ver Más</button>
+                        </div>
+                    </div>
                 </div>
+            
+                <div class="col-sm-6 col-md-4 mb-2">
+                    <div class="generoModal" data-toggle="modal" data-target="#genericModal" data-comida="Caseras">
+                        <img src="https://media.istockphoto.com/id/1191080960/es/foto/desayuno-turco-tradicional-y-personas-que-toman-varios-alimentos-amplia-composici%C3%B3n.jpg?s=612x612&w=0&k=20&c=q9c3Bm6ZgYzYeHPbc4GSVW7KQwZE9eqclxGH1hD6gVM=" class="card-img-top" alt="Comidas Varias">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Comidas Caseras</h5>
+                            <p class="card-text text-center">Conoce nuestras pastas caseras para poder comer y disfrutar de alsla</p>
+                            <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#genericModal" data-comida="Caseras">Ver Más</button>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-sm-6 col-md-4 mb-2">
+                    <div class="generoModal" data-toggle="modal" data-target="#genericModal" data-comida="Hamburguesas">
+                        <img src="https://www.alqueria.com.co/sites/default/files/hamburguesa-con-amigos-y-salsa-de-champinones_0.jpg" class="card-img-top" alt="Hamburguesas">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Hamburguesas</h5>
+                            <p class="card-text text-center">Conoce nuestras hamburguesas! </p>
+                            <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#genericModal" data-comida="Hamburguesas">Ver Más</button>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-sm-6 col-md-4 mb-2">
+                    <div class="generoModal" data-toggle="modal" data-target="#genericModal" data-comida="Empanadas">
+                        <img src="https://www.recetasnatura.com.ar/sites/default/files/655_x_475-_web_naturaempanadas_de_roastbeef_desmenuzado.jpg" class="card-img-top" alt="Empanadas">
+            
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Empanadas</h5>
+                            <p class="card-text text-center">Conoce nuestras pastas caseras para poder comer y disfrutar de alsla</p>
+                            <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#genericModal" data-comida="Empanadas">Ver Más</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-
-        <div class="col-md-4 mb-4">
-            <div class="card" data-toggle="modal" data-target="#genericModal" data-comida="Caseras">
-                <img src="https://www.crushpixel.com/big-static12/preview4/top-view-image-traditional-georgian-832722.jpg" class="card-img-top" alt="Comidas Varias">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Comidas Caseras</h5>
-                    <p class="card-text text-center">Conoce nuestras pastas caseras para poder comer y disfrutar de alsla</p>
-                    <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#genericModal" data-comida="Caseras">Ver Más</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-            <div class="card" data-toggle="modal" data-target="#genericModal" data-comida="Hamburguesas">
-                <img src="https://www.alqueria.com.co/sites/default/files/hamburguesa-con-amigos-y-salsa-de-champinones_0.jpg" class="card-img-top" alt="Hamburguesas">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Hamburguesas</h5>
-                    <p class="card-text text-center">Conoce nuestras hamburguesas! </p>
-                    <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#genericModal" data-comida="Hamburguesas">Ver Más</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-            <div class="card" data-toggle="modal" data-target="#genericModal" data-comida="Empanadas">
-                <img src="https://www.recetasnatura.com.ar/sites/default/files/655_x_475-_web_naturaempanadas_de_roastbeef_desmenuzado.jpg" class="card-img-top" alt="Empanadas">
-
-                <div class="card-body">
-                    <h5 class="card-title text-center">Empanadas</h5>
-                    <p class="card-text text-center">Conoce nuestras pastas caseras para poder comer y disfrutar de alsla</p>
-                    <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#genericModal" data-comida="Empanadas">Ver Más</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Resto de las tarjetas (repite la estructura para otras comidas) -->
-
     </div>
-</div>
     
     <!-- Modal genérico -->
     <div class="modal modal-slide fade" id="genericModal">

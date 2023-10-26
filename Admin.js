@@ -27,7 +27,7 @@ function llenarTabla() {
 
 
   function obtenerOpciones() {
-    const url = './menu.json'; // La URL es relativa a la ubicación de tu archivo HTML
+    const url = 'https://valencarballo1.github.io/LasPastasDeLaNona/menu.json'; // La URL es relativa a la ubicación de tu archivo HTML
     
     return fetch(url)  // Se agrega el return aquí
       .then(response => {

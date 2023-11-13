@@ -36,5 +36,19 @@
       {"nombre": "Matambre a la pizza", "descripcion": "Guarnicion a eleccion", "precio": 3700},
       {"nombre": "Carne al horno", "descripcion": "Guarnicion a eleccion", "precio": 3500},
       {"nombre": "Desgustacion de milanesas", "descripcion": "6 milanesas con distintos gustos para probar", "precio": 7900}
+    ],
+    "Pizza": [
+      {"nombre": "Muzzarella", "descripcion": "Grande", "precio": 3800},
+      {"nombre": "Verdura", "descripcion": "Grande", "precio": 4800},
+      {"nombre": "Jamon y Morrones", "descripcion": "Grande", "precio": 4800},
+      {"nombre": "Napolitana", "descripcion": "Grande", "precio": 4800}
+    ],
+    "Bebida": [
+      {"nombre": "Gaseosa", "descripcion": "Grande", "precio": 1500},
+      {"nombre": "Gaseosa", "descripcion": "Chica", "precio": 1000},
+      {"nombre": "Agua Saborizada", "descripcion": "Grande", "precio": 1500},
+      {"nombre": "Agua Saborizada", "descripcion": "Chica", "precio": 1000},
+      {"nombre": "Cerveza", "descripcion": "Lata", "precio": 1100},
+      {"nombre": "Cerveza", "descripcion": "Artesanal", "precio": 1500}
     ]
 }

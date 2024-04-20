@@ -1,8 +1,3 @@
-
-.bg-pink {
-    background-color: #af6c6c; /* Color de fondo rosa cemento */
-}
-
   .comida-item {
     background-color: #F3E1E1; /* Color de fondo rosa cemento */
     padding: 10px;
@@ -33,4 +28,9 @@
 
 td{
   font-weight: bold;
+}
+
+.cabecera img {
+  background-color: transparent;
+  border-radius: 50%; 
 }

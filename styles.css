@@ -1,10 +1,10 @@
 
-.card-body {
-    background-color: #F3E1E1; /* Color de fondo rosa cemento */
+.bg-pink {
+    background-color: #af6c6c; /* Color de fondo rosa cemento */
 }
 
   .comida-item {
-    background-color: #af6c6c; /* Color de fondo rosa cemento */
+    background-color: #F3E1E1; /* Color de fondo rosa cemento */
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;

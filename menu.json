@@ -49,6 +49,6 @@
       {"nombre": "Agua Saborizada", "descripcion": "Grande", "precio": 2500},
       {"nombre": "Agua Saborizada", "descripcion": "Chica", "precio": 1500},
       {"nombre": "Cerveza", "descripcion": "Lata", "precio": 2000},
-      {"nombre": "Cerveza", "descripcion": "Artesanal", "precio": 2000}
+      {"nombre": "Cerveza", "descripcion": "Artesanal", "precio": 2500}
     ]
 }

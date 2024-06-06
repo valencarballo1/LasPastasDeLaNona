@@ -1,12 +1,12 @@
 {
     "Pastas": [
-      { "nombre": "Ravioles de pollo y verdura", "descripcion": "Salsa a elección", "precio": 5000 },
-      { "nombre": "Ravioles de ricota", "descripcion": "Salsa a eleccion", "precio": 5000 },
-      { "nombre": "Ñoquis", "descripcion": "Salsa a eleccion", "precio": 5000 },
-      { "nombre": "Sorrentinos de jamon y muzzarella", "descripcion": "Salsa a eleccion", "precio": 6000 },
-      { "nombre": "Tallarines", "descripcion": "Salsa a eleccion", "precio": 5000 },
-      { "nombre": "Lasagna rellena", "descripcion": "Para una persona", "precio": 7500 },
-      { "nombre": "Canelones", "descripcion": "Para una persona", "precio": 5500 }
+      { "nombre": "Ravioles de pollo y verdura", "descripcion": "Salsa a elección", "precio": 6000 },
+      { "nombre": "Ravioles de ricota", "descripcion": "Salsa a eleccion", "precio": 6000 },
+      { "nombre": "Ñoquis", "descripcion": "Salsa a eleccion", "precio": 6000 },
+      { "nombre": "Sorrentinos de jamon y muzzarella", "descripcion": "Salsa a eleccion", "precio": 7000 },
+      { "nombre": "Tallarines", "descripcion": "Salsa a eleccion", "precio": 6000 },
+      { "nombre": "Lasagna rellena", "descripcion": "Para una persona", "precio": 8500 },
+      { "nombre": "Canelones", "descripcion": "Para una persona", "precio": 6500 }
 
 
     ],
@@ -18,11 +18,11 @@
       { "nombre": "Italiana", "descripcion": "Provoleta, tomates secos, rucula", "precio": 7500 }
     ],
     "Empanadas": [
-      {"nombre": "Carne", "descripcion": "", "precio": 900},
-      {"nombre": "Pollo", "descripcion": "", "precio": 900},
-      {"nombre": "Jamon y queso", "descripcion": "", "precio": 900},
-      {"nombre": "Verdura", "descripcion": "", "precio": 900},
-      {"nombre": "Queso, tomate y albahca", "descripcion": "", "precio": 900}
+      {"nombre": "Carne", "descripcion": "", "precio": 1000},
+      {"nombre": "Pollo", "descripcion": "", "precio": 1000},
+      {"nombre": "Jamon y queso", "descripcion": "", "precio": 1000},
+      {"nombre": "Verdura", "descripcion": "", "precio": 1000},
+      {"nombre": "Queso, tomate y albahca", "descripcion": "", "precio": 1000}
     ],
     "Caseras": [
       {"nombre": "Milanesa de carne", "descripcion": "Guarnicion a eleccion", "precio": 6000},
@@ -33,22 +33,22 @@
       {"nombre": "Tortilla", "descripcion": "Guarnicion a eleccion", "precio": 4500},
       {"nombre": "Bocadillos de acelga", "descripcion": "Guarnicion a eleccion", "precio": 900},
       {"nombre": "Pollo al verdeo", "descripcion": "Guarnicion a eleccion", "precio": 6500},
-      {"nombre": "Matambre a la pizza", "descripcion": "Guarnicion a eleccion", "precio": 6000},
-      {"nombre": "Carne al horno", "descripcion": "Guarnicion a eleccion", "precio": 6000},
-      {"nombre": "Desgustacion de milanesas", "descripcion": "6 milanesas con distintos gustos para probar", "precio": 12000}
+      {"nombre": "Matambre a la pizza", "descripcion": "Guarnicion a eleccion", "precio": 7000},
+      {"nombre": "Carne al horno", "descripcion": "Guarnicion a eleccion", "precio": 6500},
+      {"nombre": "Desgustacion de milanesas", "descripcion": "6 milanesas con distintos gustos para probar", "precio": 14900}
     ],
     "Pizza": [
-      {"nombre": "Muzzarella", "descripcion": "Grande", "precio": 7000},
-      {"nombre": "Verdura", "descripcion": "Grande", "precio": 9000},
-      {"nombre": "Jamon y Morrones", "descripcion": "Grande", "precio": 9000},
-      {"nombre": "Napolitana", "descripcion": "Grande", "precio": 9000}
+      {"nombre": "Muzzarella", "descripcion": "Grande", "precio": 9000},
+      {"nombre": "Verdura", "descripcion": "Grande", "precio": 12000},
+      {"nombre": "Jamon y Morrones", "descripcion": "Grande", "precio": 12000},
+      {"nombre": "Napolitana", "descripcion": "Grande", "precio": 12000}
     ],
     "Bebida": [
-      {"nombre": "Gaseosa", "descripcion": "Grande", "precio": 2500},
-      {"nombre": "Gaseosa", "descripcion": "Chica", "precio": 1500},
-      {"nombre": "Agua Saborizada", "descripcion": "Grande", "precio": 2500},
-      {"nombre": "Agua Saborizada", "descripcion": "Chica", "precio": 1500},
-      {"nombre": "Cerveza", "descripcion": "Lata", "precio": 2000},
-      {"nombre": "Cerveza", "descripcion": "Artesanal", "precio": 2500}
+      {"nombre": "Gaseosa", "descripcion": "Grande", "precio": 3000},
+      {"nombre": "Gaseosa", "descripcion": "Chica", "precio": 18000},
+      {"nombre": "Agua Saborizada", "descripcion": "Grande", "precio": 3000},
+      {"nombre": "Agua Saborizada", "descripcion": "Chica", "precio": 1800},
+      {"nombre": "Cerveza", "descripcion": "Lata", "precio": 2500},
+      {"nombre": "Cerveza", "descripcion": "Artesanal", "precio": 3000}
     ]
 }

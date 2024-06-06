@@ -45,7 +45,7 @@
     ],
     "Bebida": [
       {"nombre": "Gaseosa", "descripcion": "Grande", "precio": 3000},
-      {"nombre": "Gaseosa", "descripcion": "Chica", "precio": 18000},
+      {"nombre": "Gaseosa", "descripcion": "Chica", "precio": 1800},
       {"nombre": "Agua Saborizada", "descripcion": "Grande", "precio": 3000},
       {"nombre": "Agua Saborizada", "descripcion": "Chica", "precio": 1800},
       {"nombre": "Cerveza", "descripcion": "Lata", "precio": 2500},

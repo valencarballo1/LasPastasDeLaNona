@@ -1,0 +1,405 @@
+:root {
+  --background: #fff9ef;
+  --cream: #fff3df;
+  --tomato: #b8332a;
+  --tomato-dark: #86251f;
+  --basil: #2f6f4e;
+  --ink: #241812;
+  --muted: #6d5a50;
+  --card: #ffffff;
+  --gold: #f2b84b;
+  --shadow: 0 22px 60px rgba(94, 52, 30, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  overflow: hidden;
+}
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 48px 20px;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(242, 184, 75, 0.3), transparent 28%),
+    radial-gradient(circle at 85% 10%, rgba(184, 51, 42, 0.18), transparent 30%),
+    linear-gradient(135deg, #fff7e9 0%, #ffe1c2 100%);
+  position: relative;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  background: rgba(47, 111, 78, 0.12);
+  filter: blur(2px);
+}
+
+.hero::before {
+  width: 220px;
+  height: 220px;
+  left: -80px;
+  bottom: 12%;
+}
+
+.hero::after {
+  width: 320px;
+  height: 320px;
+  right: -120px;
+  top: 18%;
+}
+
+.hero__content {
+  width: min(1080px, 100%);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.logoCard {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: var(--shadow);
+  border: 8px solid rgba(255, 255, 255, 0.72);
+}
+
+.logoCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--tomato);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  width: min(900px, 100%);
+  margin: 0 auto 20px;
+  font-size: clamp(2.6rem, 8vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  margin-bottom: 18px;
+}
+
+h3 {
+  font-size: 1.45rem;
+  margin-bottom: 12px;
+}
+
+.hero__lead,
+.section__header p {
+  width: min(760px, 100%);
+  margin-inline: auto;
+  color: var(--muted);
+  font-size: 1.12rem;
+  line-height: 1.7;
+}
+
+.quickLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: var(--tomato);
+  color: white;
+  font-weight: 800;
+  box-shadow: 0 12px 24px rgba(184, 51, 42, 0.24);
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  background: var(--tomato-dark);
+  box-shadow: 0 16px 30px rgba(184, 51, 42, 0.3);
+}
+
+.button--dark {
+  width: fit-content;
+  background: var(--ink);
+  box-shadow: none;
+}
+
+.button--dark:hover {
+  background: var(--basil);
+  box-shadow: none;
+}
+
+.section {
+  padding: 92px 20px;
+}
+
+.section--cream {
+  background: var(--cream);
+}
+
+.section__header {
+  width: min(960px, 100%);
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.highlightGrid,
+.serviceGrid,
+.weeklyGrid,
+.menuGrid {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: 22px;
+}
+
+.highlightGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.highlight,
+.serviceCard,
+.weeklyCard,
+.menuCard {
+  background: var(--card);
+  border: 1px solid rgba(109, 90, 80, 0.12);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.highlight {
+  min-height: 180px;
+  padding: 28px;
+  display: grid;
+  align-content: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.highlight span {
+  font-size: 2.4rem;
+}
+
+.highlight p,
+.serviceCard p,
+.weeklyCard p,
+.menuItem p,
+.footer p,
+.moreItems {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.serviceGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.serviceCard {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.price {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 16px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(242, 184, 75, 0.22);
+  color: var(--tomato-dark) !important;
+  font-weight: 900;
+}
+
+.serviceCard ul {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.serviceCard li {
+  position: relative;
+  padding-left: 28px;
+  line-height: 1.5;
+}
+
+.serviceCard li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--basil);
+  font-weight: 900;
+}
+
+.weeklyGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.weeklyCard {
+  padding: 28px;
+}
+
+.weeklyCard span {
+  display: inline-flex;
+  margin-bottom: 18px;
+  color: var(--basil);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.menuGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.menuCard {
+  padding: 28px;
+}
+
+.menuCard h3 {
+  color: var(--tomato-dark);
+}
+
+.menuCard__items {
+  display: grid;
+  gap: 16px;
+}
+
+.menuItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed rgba(109, 90, 80, 0.25);
+}
+
+.menuItem h4 {
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.menuItem p {
+  margin-bottom: 0;
+  font-size: 0.94rem;
+}
+
+.menuItem strong {
+  color: var(--basil);
+  white-space: nowrap;
+}
+
+.moreItems {
+  margin: 18px 0 0;
+  font-weight: 800;
+}
+
+.footer {
+  padding: 34px 20px;
+  text-align: center;
+  background: var(--ink);
+  color: white;
+}
+
+.footer p {
+  margin: 8px 0 0;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 860px) {
+  .highlightGrid,
+  .serviceGrid,
+  .weeklyGrid,
+  .menuGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 72px 16px;
+  }
+
+  .serviceCard,
+  .menuCard,
+  .weeklyCard,
+  .highlight {
+    border-radius: 22px;
+  }
+}
+
+@media (max-width: 560px) {
+  .logoCard {
+    width: 170px;
+    height: 170px;
+  }
+
+  .quickLinks,
+  .button {
+    width: 100%;
+  }
+
+  .menuItem {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

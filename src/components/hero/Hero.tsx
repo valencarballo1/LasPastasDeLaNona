@@ -1,3 +1,4 @@
+import { BootstrapIcon } from "../icons/BootstrapIcon";
 import { heroContent, heroNavItems } from "./hero.content";
 
 export function Hero() {
@@ -27,6 +28,7 @@ export function Hero() {
       <nav className="hero__nav" aria-label="Secciones principales">
         {heroNavItems.map((item) => (
           <a href={item.href} key={item.href}>
+            <BootstrapIcon name={item.icon} className="navIcon" />
             {item.label}
           </a>
         ))}

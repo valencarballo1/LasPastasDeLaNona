@@ -1,3 +1,5 @@
+import { BootstrapIcon } from "./icons/BootstrapIcon";
+
 const whatsappMessage = encodeURIComponent(
   "Hola, quiero hacer una consulta para Las Pastas de la Nona."
 );
@@ -11,7 +13,7 @@ export function FloatingWhatsApp() {
       rel="noreferrer"
       aria-label="Consultar por WhatsApp"
     >
-      <span aria-hidden="true">☎</span>
+      <BootstrapIcon name="whatsapp" className="whatsAppIcon" />
       WhatsApp
     </a>
   );

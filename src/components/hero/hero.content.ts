@@ -1,9 +1,9 @@
 export const heroNavItems = [
-  { label: "Menú restaurante", href: "/menu-restaurante" },
-  { label: "Comida para llevar", href: "/comida-para-llevar" },
-  { label: "Pizza & pasta party", href: "/eventos" },
-  { label: "Reservar mesa", href: "/reservas" },
-];
+  { label: "Menú restaurante", href: "/menu-restaurante", icon: "journal" },
+  { label: "Comida para llevar", href: "/comida-para-llevar", icon: "bag" },
+  { label: "Pizza & pasta party", href: "/eventos", icon: "stars" },
+  { label: "Reservar mesa", href: "/reservas", icon: "calendar" },
+] as const;
 
 export const heroContent = {
   eyebrow: "Fábrica de pastas en Burzaco",

@@ -1,4 +1,5 @@
 import { Footer } from "../../src/components/footer/Footer";
+import { BootstrapIcon } from "../../src/components/icons/BootstrapIcon";
 import { PageHeader } from "../../src/components/PageHeader";
 
 export default function ReservationsPage() {
@@ -36,7 +37,7 @@ export default function ReservationsPage() {
             Comentarios
             <textarea name="notes" rows={4} placeholder="Cumpleaños, silla para bebé, ubicación preferida..." />
           </label>
-          <button type="button">Enviar solicitud</button>
+          <button type="button">Enviar solicitud<BootstrapIcon name="calendar" className="buttonIcon" /></button>
           <p>Este botón no envía datos todavía: queda preparado para la integración del backend.</p>
         </form>
       </section>

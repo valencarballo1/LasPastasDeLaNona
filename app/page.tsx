@@ -1,4 +1,5 @@
 import { Footer } from "../src/components/footer/Footer";
+import { BootstrapIcon } from "../src/components/icons/BootstrapIcon";
 import { Hero } from "../src/components/hero/Hero";
 import { SectionTitle } from "../src/components/shared/SectionTitle";
 
@@ -8,26 +9,30 @@ const quickLinks = [
     text: "Conocé la propuesta para comer en nuestro salón: pasta libre, platos de la casa y salsas caseras.",
     href: "/menu-restaurante",
     label: "Ver menú",
+    icon: "journal",
   },
   {
     title: "Comida para llevar",
     text: "Pastas frescas, salsas y opciones listas para retirar y disfrutar en casa.",
     href: "/comida-para-llevar",
     label: "Ver opciones",
+    icon: "bag",
   },
   {
     title: "Pizza party y pasta party",
     text: "Servicios para cumpleaños, reuniones familiares y eventos empresariales con atención personalizada.",
     href: "/eventos",
     label: "Contratar servicios",
+    icon: "stars",
   },
   {
     title: "Reserva de mesas",
     text: "Dejá tus datos para organizar tu visita al restaurante. Luego conectamos el formulario al backend.",
     href: "/reservas",
     label: "Reservar",
+    icon: "calendar",
   },
-];
+] as const;
 
 export default function Home() {
   return (
@@ -60,9 +65,10 @@ export default function Home() {
         <div className="actionGrid">
           {quickLinks.map((item) => (
             <article className="actionCard" key={item.title}>
+              <BootstrapIcon name={item.icon} className="cardIcon" />
               <h3>{item.title}</h3>
               <p>{item.text}</p>
-              <a href={item.href}>{item.label}</a>
+              <a href={item.href}>{item.label}<BootstrapIcon name="arrow" className="buttonIcon" /></a>
             </article>
           ))}
         </div>
@@ -76,7 +82,7 @@ export default function Home() {
             Sumamos una vista de reservas para mesas del restaurante, lista para conectar con el backend en .NET Core.
           </p>
         </div>
-        <a href="/reservas">Reservar mesa</a>
+        <a href="/reservas">Reservar mesa<BootstrapIcon name="calendar" className="buttonIcon" /></a>
       </section>
 
       <Footer />

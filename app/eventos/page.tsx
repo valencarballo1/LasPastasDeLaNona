@@ -1,4 +1,5 @@
 import { Footer } from "../../src/components/footer/Footer";
+import { BootstrapIcon } from "../../src/components/icons/BootstrapIcon";
 import { PageHeader } from "../../src/components/PageHeader";
 import { services } from "../../src/components/services/services.content";
 import { SectionTitle } from "../../src/components/shared/SectionTitle";
@@ -36,6 +37,7 @@ export default function EventsPage() {
               </ul>
               <a href="https://wa.me/5491123456789" target="_blank" rel="noreferrer">
                 Consultar disponibilidad
+                <BootstrapIcon name="whatsapp" className="buttonIcon" />
               </a>
             </article>
           ))}

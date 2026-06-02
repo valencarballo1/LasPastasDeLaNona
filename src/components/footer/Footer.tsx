@@ -1,3 +1,5 @@
+import { BootstrapIcon } from "../icons/BootstrapIcon";
+
 const footerLinks = [
   { label: "Inicio", href: "/" },
   { label: "Menú restaurante", href: "/menu-restaurante" },
@@ -15,6 +17,7 @@ export function Footer() {
         {footerLinks.map((link) => (
           <a href={link.href} key={link.href}>
             {link.label}
+            <BootstrapIcon name="arrow" className="footerIcon" />
           </a>
         ))}
       </nav>

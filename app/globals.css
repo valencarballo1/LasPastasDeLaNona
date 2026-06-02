@@ -672,3 +672,407 @@ main {
     grid-template-columns: 1fr;
   }
 }
+
+.hero__grid--landing {
+  grid-template-columns: minmax(220px, 360px) minmax(0, 1fr);
+}
+
+.hero__copy--landing {
+  gap: 18px;
+}
+
+.hero__copy--landing h1 {
+  margin: 0;
+  color: var(--color-cream);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.8rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.hero__copy--landing p {
+  max-width: 680px;
+  color: var(--color-cream-deep);
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  font-style: normal;
+  letter-spacing: 0;
+  line-height: 1.65;
+}
+
+.hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero__badges strong {
+  padding: 10px 14px;
+  border: 1px solid rgba(201, 154, 98, 0.5);
+  border-radius: 999px;
+  background: rgba(255, 245, 230, 0.08);
+  color: var(--color-cream);
+  font-size: 0.88rem;
+}
+
+.storyGrid {
+  width: min(var(--max-width), 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.storyPanel,
+.actionCard,
+.reservationForm,
+.processList,
+.saucePills article,
+.takeAwayCard {
+  box-shadow: var(--shadow-soft);
+}
+
+.storyPanel {
+  padding: clamp(28px, 4vw, 42px);
+  display: grid;
+  align-content: center;
+  gap: 16px;
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at 100% 0, rgba(159, 53, 45, 0.16), transparent 34%),
+    var(--color-surface);
+  color: var(--color-cream);
+}
+
+.storyPanel span {
+  color: var(--color-gold);
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.storyPanel p {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 3vw, 2.25rem);
+  line-height: 1.25;
+}
+
+.actionGrid,
+.takeAwayGrid,
+.saucePills {
+  width: min(var(--max-width), 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: 22px;
+}
+
+.actionGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.actionCard,
+.takeAwayCard,
+.saucePills article {
+  border: 1px solid rgba(201, 154, 98, 0.22);
+  border-radius: var(--radius-xl);
+  background: #fffdf8;
+}
+
+.actionCard {
+  min-height: 275px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.actionCard h3,
+.takeAwayCard h3,
+.saucePills h3 {
+  margin: 0 0 12px;
+  color: var(--color-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.75rem;
+}
+
+.actionCard p,
+.saucePills p {
+  margin: 0;
+  color: #6d5a50;
+  line-height: 1.6;
+}
+
+.actionCard a,
+.reservationTeaser a,
+.serviceCard--expanded a,
+.reservationForm button {
+  width: fit-content;
+  margin-top: auto;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--color-red);
+  color: #fffdf8;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.reservationTeaser {
+  width: min(var(--max-width), calc(100% - 28px));
+  margin: clamp(54px, 7vw, 86px) auto;
+  padding: clamp(30px, 5vw, 52px);
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  border: 1px solid rgba(201, 154, 98, 0.82);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 26%),
+    var(--color-surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.reservationTeaser h2 {
+  margin: 0 0 12px;
+  color: var(--color-gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.1rem, 5vw, 4rem);
+  line-height: 1;
+}
+
+.reservationTeaser p:not(.eyebrow) {
+  max-width: 660px;
+  margin: 0;
+  color: var(--color-cream-deep);
+  line-height: 1.6;
+}
+
+.pageHeader {
+  width: min(var(--max-width), calc(100% - 28px));
+  margin: 18px auto 0;
+  padding: clamp(34px, 6vw, 64px);
+  border: 1px solid rgba(201, 154, 98, 0.82);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at 100% 0, rgba(47, 91, 61, 0.2), transparent 34%),
+    var(--color-surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.backLink {
+  display: inline-flex;
+  margin-bottom: 26px;
+  color: var(--color-gold);
+  font-weight: 900;
+}
+
+.pageHeader h1 {
+  max-width: 900px;
+  margin: 0 0 14px;
+  color: var(--color-cream);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.92;
+}
+
+.pageHeader > p:not(.eyebrow) {
+  max-width: 760px;
+  margin: 0;
+  color: var(--color-cream-deep);
+  font-size: 1.12rem;
+  line-height: 1.65;
+}
+
+.takeAwayGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.takeAwayCard {
+  padding: 26px;
+}
+
+.takeAwayCard ul {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.takeAwayCard li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px dotted rgba(35, 25, 20, 0.2);
+  color: var(--color-ink);
+  line-height: 1.45;
+}
+
+.saucePills {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.saucePills article {
+  padding: 24px;
+  text-align: center;
+}
+
+.saucePills span {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 2.3rem;
+}
+
+.serviceCard--expanded {
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceCard--expanded a {
+  display: inline-flex;
+}
+
+.processList {
+  width: min(880px, 100%);
+  margin: 0 auto;
+  padding: 34px 34px 34px 58px;
+  border-radius: var(--radius-xl);
+  background: #fffdf8;
+  color: var(--color-ink);
+}
+
+.processList li {
+  margin-bottom: 16px;
+  padding-left: 10px;
+  font-size: 1.1rem;
+  line-height: 1.55;
+}
+
+.processList li:last-child {
+  margin-bottom: 0;
+}
+
+.reservationForm {
+  width: min(860px, 100%);
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 42px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  border-radius: var(--radius-xl);
+  background: #fffdf8;
+}
+
+.reservationForm label {
+  display: grid;
+  gap: 8px;
+  color: var(--color-ink);
+  font-weight: 900;
+}
+
+.reservationForm label:has(textarea),
+.reservationForm p {
+  grid-column: 1 / -1;
+}
+
+.reservationForm input,
+.reservationForm textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid rgba(35, 25, 20, 0.16);
+  border-radius: 14px;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font: inherit;
+}
+
+.reservationForm button {
+  margin-top: 8px;
+}
+
+.reservationForm p {
+  margin: 0;
+  color: #6d5a50;
+  line-height: 1.5;
+}
+
+.floatingWhatsApp {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 20;
+  padding: 14px 18px;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  border-radius: 999px;
+  background: #25d366;
+  color: #102116;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  font-weight: 950;
+}
+
+.floatingWhatsApp span {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+@media (max-width: 1100px) {
+  .actionGrid,
+  .takeAwayGrid,
+  .saucePills {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 920px) {
+  .hero__grid--landing,
+  .storyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__copy--landing,
+  .hero__badges {
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .reservationTeaser {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .actionGrid,
+  .takeAwayGrid,
+  .saucePills,
+  .reservationForm {
+    grid-template-columns: 1fr;
+  }
+
+  .reservationForm label:has(textarea),
+  .reservationForm p {
+    grid-column: auto;
+  }
+
+  .floatingWhatsApp {
+    right: 12px;
+    bottom: 12px;
+  }
+}
+
+.siteFooter nav {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}

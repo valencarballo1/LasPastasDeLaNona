@@ -1,12 +1,14 @@
 export const heroNavItems = [
-  { label: "Menú", href: "#menu" },
-  { label: "Pastas frescas", href: "#pastas-frescas" },
-  { label: "Menú semanal", href: "#menu-semanal" },
-  { label: "Eventos", href: "#eventos" },
+  { label: "Menú restaurante", href: "/menu-restaurante" },
+  { label: "Comida para llevar", href: "/comida-para-llevar" },
+  { label: "Pizza & pasta party", href: "/eventos" },
+  { label: "Reservar mesa", href: "/reservas" },
 ];
 
 export const heroContent = {
-  leftQuote: "La pasta hecha en casa es el corazón de nuestra cocina.",
-  rightQuote: "La cucina italiana no es sólo comida, es amor.",
-  badges: ["Elaboración artesanal", "Ingredientes frescos", "Recetas tradicionales"],
+  eyebrow: "Fábrica de pastas en Burzaco",
+  title: "Pastas frescas, restaurante y eventos con sabor de familia.",
+  subtitle:
+    "Hace 27 años elaboramos pastas artesanales en Burzaco. Un lugar para comer en el restaurante, pedir para llevar o llevar la cocina de la Nona a tus eventos.",
+  badges: ["27 años", "Burzaco", "Elaboración artesanal"],
 };

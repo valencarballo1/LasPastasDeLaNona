@@ -6,7 +6,7 @@ export function Hero() {
     <header className="hero" id="inicio">
       <div className="hero__grid hero__grid--landing">
         <div className="hero__brand">
-          <img src="/img/logo.svg" alt="Las Pastas de la Nona" />
+          <img src="/img/logo.png" alt="Las Pastas de la Nona" />
         </div>
 
         <div className="hero__copy hero__copy--landing">

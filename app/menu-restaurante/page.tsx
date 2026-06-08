@@ -9,7 +9,7 @@ export default function RestaurantMenuPage() {
       <PageHeader
         eyebrow="Restaurante"
         title="Menú del restaurante"
-        subtitle="Una vista dedicada para la propuesta del salón: pasta libre, pastas de la casa, salsas y destacados para actualizar sin saturar el inicio."
+        subtitle="La carta del salón con pastas caseras, salsas de la Nona y opciones para sentarse a comer como en casa."
       />
       <Menu />
       <WeeklyMenu />

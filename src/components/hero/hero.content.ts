@@ -9,6 +9,6 @@ export const heroContent = {
   eyebrow: "Pastas artesanales · Restaurante familiar",
   title: "Sabor a domingo en familia, como las hacía la Nona.",
   subtitle:
-    "Tradición italiana, pastas frescas hechas en el día y comida abundante para disfrutar en el salón, retirar en casa o compartir en eventos.",
+    "Pastas frescas hechas en el día, salsas de la Nona y comida abundante para disfrutar en el salón, retirar en casa o compartir en eventos.",
   badges: ["Casero", "Artesanal", "Hecho en el día", "Burzaco"],
 };

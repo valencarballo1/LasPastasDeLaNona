@@ -18,7 +18,7 @@ export type Sauce = {
 
 export const pastaGroups: MenuGroup[] = [
   {
-    title: "Ravioli e ravioloni",
+    title: "Ravioles y raviolones",
     lines: [
       { name: "Ravioles de ricota", price: "$" },
       { name: "Ravioles de verdura y carne", price: "$" },
@@ -28,7 +28,7 @@ export const pastaGroups: MenuGroup[] = [
     ],
   },
   {
-    title: "Caneloni",
+    title: "Canelones",
     lines: [{ name: "Canelones de verdura y ricota", price: "$" }],
   },
   {
@@ -39,17 +39,17 @@ export const pastaGroups: MenuGroup[] = [
     ],
   },
   {
-    title: "Paste tradizionali",
+    title: "Pastas tradicionales",
     lines: [
       { name: "Tallarines caseros", price: "$" },
       { name: "Fusilli", price: "$" },
       { name: "Macarrones", price: "$" },
-      { name: "Tallarines tricolor cortados a cuchillo", price: "$" },
+      { name: "Tallarines cortados a cuchillo", price: "$" },
       { name: "Agnolotis de ricota, verdura y mozzarella", price: "$" },
     ],
   },
   {
-    title: "Specialità della casa",
+    title: "Especialidades de la casa",
     lines: [{ name: "Lasaña rellena", price: "$" }],
   },
 ];

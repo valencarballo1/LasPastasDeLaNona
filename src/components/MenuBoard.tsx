@@ -15,14 +15,14 @@ export function MenuBoard() {
     <section className="menuBoardSection" id="carta" aria-labelledby="carta-title">
       <div className="menuBoard">
         <div className="boardHeader">
-          <p className="script">Mangia bene, ridi spesso, ama molto.</p>
+          <p className="script">Pastas caseras con sabor de familia.</p>
           <h1 id="carta-title">Pasta libre</h1>
           <p>Todos los días</p>
         </div>
 
         <div className="boardColumns">
           <div className="boardColumn" id="pastas">
-            <h2 className="ribbonTitle ribbonTitle--red">Le nostre paste</h2>
+            <h2 className="ribbonTitle ribbonTitle--red">Pastas de la Nona</h2>
             {pastaGroups.map((group) => (
               <article className="menuGroup" key={group.title}>
                 <h3>{group.title}</h3>
@@ -36,7 +36,7 @@ export function MenuBoard() {
           </div>
 
           <div className="boardColumn boardColumn--sauces">
-            <h2 className="ribbonTitle ribbonTitle--green">Le nostre salse</h2>
+            <h2 className="ribbonTitle ribbonTitle--green">Salsas de la Nona</h2>
             <p className="script boardColumn__intro">El secreto está en la salsa</p>
             <div className="sauceList">
               {sauces.map((sauce) => (
@@ -52,8 +52,8 @@ export function MenuBoard() {
             </div>
 
             <aside className="welcomeBox">
-              <p className="script">Benvenuti alla nostra tavola</p>
-              <span>Bienvenidos a nuestra mesa</span>
+              <p className="script">Bienvenidos a la mesa de la Nona</p>
+              <span>Pastas caseras para compartir</span>
             </aside>
           </div>
         </div>
@@ -61,7 +61,7 @@ export function MenuBoard() {
         <footer className="boardFooter">
           <span>Elaboración artesanal</span>
           <span>Ingredientes frescos</span>
-          <span>Recetas tradicionales italianas</span>
+          <span>Recetas de la Nona</span>
         </footer>
       </div>
     </section>

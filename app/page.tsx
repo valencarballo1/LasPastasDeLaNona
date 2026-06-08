@@ -44,8 +44,8 @@ export default function Home() {
           <SectionTitle
             align="left"
             eyebrow="Nuestra historia"
-            title="Una trattoria familiar cálida, artesanal y bien de casa"
-            subtitle="Las Pastas de la Nona reúne la tradición italiana con la cercanía de una cocina familiar: pastas frescas, salsas caseras, comida abundante y una atención pensada para que cada visita se sienta como un domingo en familia."
+            title="Una casa familiar cálida, artesanal y bien de la Nona"
+            subtitle="Las Pastas de la Nona reúne recetas de siempre con la cercanía de una cocina familiar: pastas frescas, salsas caseras, comida abundante y una atención pensada para que cada visita se sienta como un domingo en familia."
           />
           <div className="storyPanel">
             <span>Hecho en el día</span>

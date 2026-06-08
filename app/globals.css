@@ -91,26 +91,6 @@ main {
   transform: scaleX(-1);
 }
 
-.italianRibbon {
-  position: absolute;
-  width: 86px;
-  height: 260px;
-  opacity: 0.9;
-  background: linear-gradient(90deg, var(--color-green) 0 33%, var(--color-cream) 33% 66%, var(--color-red) 66%);
-}
-
-.italianRibbon--left {
-  left: 20px;
-  top: -40px;
-  transform: rotate(36deg);
-}
-
-.italianRibbon--right {
-  right: 20px;
-  bottom: -42px;
-  transform: rotate(36deg);
-}
-
 .hero__grid {
   position: relative;
   z-index: 2;
@@ -162,13 +142,6 @@ main {
   width: min(100%, 320px);
   border-radius: 999px;
   filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.36));
-}
-
-.tricolor {
-  width: min(220px, 80%);
-  height: 8px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--color-green) 0 33%, var(--color-cream) 33% 66%, var(--color-red) 66%);
 }
 
 .hero__nav {
@@ -1145,7 +1118,7 @@ main {
 }
 
 
-/* Brand refresh: warmer trattoria atmosphere inspired by the manual de marca. */
+/* Brand refresh: warmer, homemade atmosphere inspired by the manual de marca. */
 .hero__brand img {
   padding: 10px;
   background: #050505;
@@ -1256,4 +1229,19 @@ main {
   border-color: rgba(109, 122, 82, 0.32);
   background: rgba(255, 248, 236, 0.72);
   color: var(--color-ink);
+}
+
+
+.restaurantMenuGrid {
+  align-items: stretch;
+}
+
+.restaurantMenuCard h3::after {
+  content: " · La Nona";
+  color: var(--color-red);
+  font-size: 0.76em;
+}
+
+.restaurantSauceGrid article {
+  box-shadow: var(--shadow-soft);
 }

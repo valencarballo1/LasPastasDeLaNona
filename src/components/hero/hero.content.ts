@@ -6,9 +6,9 @@ export const heroNavItems = [
 ] as const;
 
 export const heroContent = {
-  eyebrow: "Fábrica de pastas en Burzaco",
-  title: "Pastas frescas, restaurante y eventos con sabor de familia.",
+  eyebrow: "Pastas artesanales · Restaurante familiar",
+  title: "Sabor a domingo en familia, como las hacía la Nona.",
   subtitle:
-    "Hace 27 años elaboramos pastas artesanales en Burzaco. Un lugar para comer en el restaurante, pedir para llevar o llevar la cocina de la Nona a tus eventos.",
-  badges: ["27 años", "Burzaco", "Elaboración artesanal"],
+    "Tradición italiana, pastas frescas hechas en el día y comida abundante para disfrutar en el salón, retirar en casa o compartir en eventos.",
+  badges: ["Casero", "Artesanal", "Hecho en el día", "Burzaco"],
 };

@@ -1,17 +1,17 @@
 :root {
-  --color-bg: #f6eee2;
-  --color-surface: #12100e;
-  --color-surface-soft: #241d18;
-  --color-cream: #fffaf2;
-  --color-cream-deep: #ead8bd;
-  --color-text: #fff8ee;
-  --color-muted: #d8c1a0;
-  --color-ink: #18120f;
-  --color-gold: #b98952;
-  --color-red: #8e2f27;
-  --color-green: #3f342b;
-  --color-green-light: #b98952;
-  --shadow-soft: 0 24px 70px rgba(0, 0, 0, 0.28);
+  --color-bg: #f3dfc1;
+  --color-surface: #2a2a2a;
+  --color-surface-soft: #40352d;
+  --color-cream: #fff8ec;
+  --color-cream-deep: #f3dfc1;
+  --color-text: #fff8ec;
+  --color-muted: #f0d7b5;
+  --color-ink: #2a2a2a;
+  --color-gold: #d89aa3;
+  --color-red: #b6463a;
+  --color-green: #6d7a52;
+  --color-green-light: #8c9a6a;
+  --shadow-soft: 0 24px 70px rgba(42, 42, 42, 0.18);
   --radius-xl: 28px;
   --radius-lg: 22px;
   --max-width: 1180px;
@@ -29,10 +29,11 @@ body {
   margin: 0;
   color: var(--color-text);
   background:
-    radial-gradient(circle at 12% -10%, rgba(142, 47, 39, 0.16), transparent 32%),
-    radial-gradient(circle at 92% 12%, rgba(185, 137, 82, 0.18), transparent 34%),
+    radial-gradient(circle at 12% -10%, rgba(182, 70, 58, 0.14), transparent 32%),
+    radial-gradient(circle at 92% 12%, rgba(216, 154, 163, 0.24), transparent 34%),
+    linear-gradient(135deg, rgba(255, 248, 236, 0.78), rgba(243, 223, 193, 0.92)),
     var(--color-bg);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+  font-family: Nunito, Poppins, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
 }
 
@@ -62,12 +63,12 @@ main {
   margin: 18px auto 0;
   padding: clamp(28px, 5vw, 56px);
   position: relative;
-  border: 1px solid rgba(201, 154, 98, 0.82);
+  border: 1px solid rgba(109, 122, 82, 0.32);
   border-radius: var(--radius-xl);
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 26%),
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 5px),
-    var(--color-surface);
+    radial-gradient(circle at 78% 12%, rgba(216, 154, 163, 0.28), transparent 30%),
+    radial-gradient(circle at 10% 100%, rgba(182, 70, 58, 0.18), transparent 34%),
+    linear-gradient(135deg, #fff8ec 0%, #f3dfc1 50%, #f6e9d6 100%);
   overflow: hidden;
 }
 
@@ -95,7 +96,7 @@ main {
   width: 86px;
   height: 260px;
   opacity: 0.9;
-  background: linear-gradient(90deg, #18120f 0 33%, #ead8bd 33% 66%, #8e2f27 66%);
+  background: linear-gradient(90deg, var(--color-green) 0 33%, var(--color-cream) 33% 66%, var(--color-red) 66%);
 }
 
 .italianRibbon--left {
@@ -167,7 +168,7 @@ main {
   width: min(220px, 80%);
   height: 8px;
   border-radius: 999px;
-  background: linear-gradient(90deg, #18120f 0 33%, #ead8bd 33% 66%, #8e2f27 66%);
+  background: linear-gradient(90deg, var(--color-green) 0 33%, var(--color-cream) 33% 66%, var(--color-red) 66%);
 }
 
 .hero__nav {
@@ -687,8 +688,8 @@ main {
 
 .hero__copy--landing h1 {
   margin: 0;
-  color: var(--color-cream);
-  font-family: Georgia, "Times New Roman", serif;
+  color: var(--color-ink);
+  font-family: Baloo 2, Fredoka, Cooper Black, Georgia, "Times New Roman", serif;
   font-size: clamp(2.8rem, 7vw, 5.8rem);
   line-height: 0.95;
   letter-spacing: -0.05em;
@@ -696,8 +697,8 @@ main {
 
 .hero__copy--landing p {
   max-width: 680px;
-  color: var(--color-cream-deep);
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  color: #5f5147;
+  font-family: Nunito, Poppins, ui-sans-serif, system-ui, sans-serif;
   font-size: clamp(1.05rem, 2vw, 1.28rem);
   font-style: normal;
   letter-spacing: 0;
@@ -712,10 +713,10 @@ main {
 
 .hero__badges strong {
   padding: 10px 14px;
-  border: 1px solid rgba(201, 154, 98, 0.5);
+  border: 1px solid rgba(109, 122, 82, 0.28);
   border-radius: 999px;
-  background: rgba(255, 245, 230, 0.08);
-  color: var(--color-cream);
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--color-green);
   font-size: 0.88rem;
 }
 
@@ -1141,4 +1142,118 @@ main {
 .reservationForm button {
   display: inline-flex;
   align-items: center;
+}
+
+
+/* Brand refresh: warmer trattoria atmosphere inspired by the manual de marca. */
+.hero__brand img {
+  padding: 10px;
+  background: #050505;
+  border: 10px solid var(--color-cream);
+  box-shadow: 0 18px 45px rgba(42, 42, 42, 0.22), 0 0 0 10px rgba(216, 154, 163, 0.18);
+}
+
+.hero__nav a {
+  border-color: rgba(109, 122, 82, 0.32);
+  background: rgba(255, 248, 236, 0.76);
+  color: var(--color-ink);
+}
+
+.hero__nav a:hover {
+  border-color: var(--color-red);
+  background: var(--color-red);
+  color: #fff8ec;
+}
+
+.hero::before,
+.hero::after {
+  color: var(--color-red);
+}
+
+.hero__copy--landing h1,
+.sectionTitle h2,
+.reservationTeaser h2,
+.pageHeader h1,
+.storyPanel p,
+.actionCard h3,
+.takeAwayCard h3,
+.saucePills h3,
+.serviceCard h3,
+.weeklyCard h3,
+.siteFooter strong {
+  font-family: Baloo 2, Fredoka, Cooper Black, Georgia, "Times New Roman", serif;
+}
+
+.storyPanel {
+  background:
+    radial-gradient(circle at 88% 6%, rgba(216, 154, 163, 0.24), transparent 32%),
+    linear-gradient(135deg, var(--color-green), #4f5c3a);
+}
+
+.storyPanel span {
+  color: var(--color-cream);
+}
+
+.storyTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.storyTags strong {
+  padding: 9px 12px;
+  border: 1px solid rgba(255, 248, 236, 0.36);
+  border-radius: 999px;
+  background: rgba(255, 248, 236, 0.12);
+  color: var(--color-cream);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.actionCard,
+.weeklyCard,
+.serviceCard,
+.takeAwayCard,
+.saucePills article,
+.reservationForm,
+.processList {
+  border-color: rgba(109, 122, 82, 0.22);
+  background: rgba(255, 248, 236, 0.92);
+}
+
+.actionCard:hover,
+.weeklyCard:hover,
+.serviceCard:hover {
+  box-shadow: 0 26px 60px rgba(109, 122, 82, 0.18);
+}
+
+.cardIcon,
+.serviceCard__top span {
+  background: rgba(216, 154, 163, 0.24);
+  color: var(--color-red);
+}
+
+.reservationTeaser,
+.pageHeader {
+  border-color: rgba(109, 122, 82, 0.32);
+  background:
+    radial-gradient(circle at 8% 100%, rgba(216, 154, 163, 0.22), transparent 35%),
+    linear-gradient(135deg, var(--color-surface), #3f352f);
+}
+
+.siteFooter {
+  background:
+    linear-gradient(180deg, rgba(255, 248, 236, 0.78), rgba(243, 223, 193, 0.95)),
+    var(--color-bg);
+}
+
+.siteFooter p {
+  color: #5f5147;
+}
+
+.siteFooter a {
+  border-color: rgba(109, 122, 82, 0.32);
+  background: rgba(255, 248, 236, 0.72);
+  color: var(--color-ink);
 }

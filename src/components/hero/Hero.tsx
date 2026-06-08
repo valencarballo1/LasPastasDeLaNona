@@ -9,7 +9,7 @@ export function Hero() {
 
       <div className="hero__grid hero__grid--landing">
         <div className="hero__brand">
-          <img src="/img/logo.svg" alt="Las Pastas de la Nona" />
+          <img src="img/logo.png" alt="Las Pastas de la Nona" />
           <div className="tricolor" aria-hidden="true" />
         </div>
 

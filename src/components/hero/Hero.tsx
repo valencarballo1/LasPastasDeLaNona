@@ -4,13 +4,9 @@ import { heroContent, heroNavItems } from "./hero.content";
 export function Hero() {
   return (
     <header className="hero" id="inicio">
-      <div className="italianRibbon italianRibbon--left" aria-hidden="true" />
-      <div className="italianRibbon italianRibbon--right" aria-hidden="true" />
-
       <div className="hero__grid hero__grid--landing">
         <div className="hero__brand">
           <img src="/img/logo.svg" alt="Las Pastas de la Nona" />
-          <div className="tricolor" aria-hidden="true" />
         </div>
 
         <div className="hero__copy hero__copy--landing">

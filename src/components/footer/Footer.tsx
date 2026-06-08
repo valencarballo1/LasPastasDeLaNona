@@ -12,7 +12,7 @@ export function Footer() {
   return (
     <footer className="siteFooter" id="contacto">
       <strong>Las Pastas de la Nona</strong>
-      <p>Fábrica de pastas en Burzaco, restaurante, take away, pizza party y pasta party.</p>
+      <p>Pastas artesanales, restaurante familiar, take away, pizza party y pasta party con sabor a domingo en familia.</p>
       <nav aria-label="Navegación secundaria">
         {footerLinks.map((link) => (
           <a href={link.href} key={link.href}>

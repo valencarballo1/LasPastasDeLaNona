@@ -1,3 +1,4 @@
+import { ContactSection } from "../src/components/ContactSection";
 import { Footer } from "../src/components/footer/Footer";
 import { BootstrapIcon } from "../src/components/icons/BootstrapIcon";
 import { Hero } from "../src/components/hero/Hero";
@@ -27,7 +28,7 @@ const quickLinks = [
   },
   {
     title: "Reserva de mesas",
-    text: "Dejá tus datos para organizar tu visita al restaurante. Luego conectamos el formulario al backend.",
+    text: "Dejá tus datos y te respondemos por WhatsApp para confirmar disponibilidad de mesa.",
     href: "/reservas",
     label: "Reservar",
     icon: "calendar",
@@ -89,6 +90,8 @@ export default function Home() {
         </div>
         <a href="/reservas">Reservar mesa<BootstrapIcon name="calendar" className="buttonIcon" /></a>
       </section>
+
+      <ContactSection />
 
       <Footer />
     </main>

@@ -1,3 +1,4 @@
+import { localInfo } from "../../data/local-info";
 import { BootstrapIcon } from "../icons/BootstrapIcon";
 
 const footerLinks = [
@@ -10,9 +11,12 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="siteFooter" id="contacto">
-      <strong>Las Pastas de la Nona</strong>
-      <p>Pastas artesanales, restaurante familiar, take away, pizza party y pasta party con sabor a domingo en familia.</p>
+    <footer className="siteFooter">
+      <div>
+        <strong>{localInfo.name}</strong>
+        <p>Pastas artesanales, restaurante familiar, take away, pizza party y pasta party con sabor a domingo en familia.</p>
+        <small>{localInfo.address} · {localInfo.whatsappLabel}</small>
+      </div>
       <nav aria-label="Navegación secundaria">
         {footerLinks.map((link) => (
           <a href={link.href} key={link.href}>

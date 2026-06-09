@@ -1,14 +1,13 @@
+import { buildWhatsAppUrl } from "../data/local-info";
 import { BootstrapIcon } from "./icons/BootstrapIcon";
 
-const whatsappMessage = encodeURIComponent(
-  "Hola, quiero hacer una consulta para Las Pastas de la Nona."
-);
+const whatsappMessage = "Hola, quiero hacer una consulta para Las Pastas de la Nona.";
 
 export function FloatingWhatsApp() {
   return (
     <a
       className="floatingWhatsApp"
-      href={`https://wa.me/5491123456789?text=${whatsappMessage}`}
+      href={buildWhatsAppUrl(whatsappMessage)}
       target="_blank"
       rel="noreferrer"
       aria-label="Consultar por WhatsApp"

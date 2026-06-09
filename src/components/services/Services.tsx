@@ -13,7 +13,7 @@ export function Services() {
         {services.map((service) => (
           <article className="serviceCard" key={service.title}>
             <div className="serviceCard__top">
-              <span aria-hidden="true">{service.icon}</span>
+              <span aria-hidden="true">{service.badge}</span>
               <p>{service.price}</p>
             </div>
             <h3>{service.title}</h3>

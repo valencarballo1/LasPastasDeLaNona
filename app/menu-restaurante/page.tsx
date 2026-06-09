@@ -8,8 +8,8 @@ export default function RestaurantMenuPage() {
     <main>
       <PageHeader
         eyebrow="Restaurante"
-        title="Menú del restaurante"
-        subtitle="La carta del salón con pastas caseras, salsas de la Nona y opciones para sentarse a comer como en casa."
+        title="Menú para escanear en la mesa"
+        subtitle="Una carta pensada para QR: categorías siempre visibles, lectura cómoda desde el celular y platos organizados para encontrar rápido qué pedir."
       />
       <Menu />
       <WeeklyMenu />

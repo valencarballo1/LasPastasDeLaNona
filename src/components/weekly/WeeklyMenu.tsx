@@ -5,9 +5,9 @@ export function WeeklyMenu() {
   return (
     <section className="contentSection contentSection--cream" id="menu-semanal">
       <SectionTitle
-        eyebrow="Menú semanal"
-        title="Especiales para organizar tu semana"
-        subtitle="Bloques editables para destacar platos, promociones o novedades de cada día."
+        eyebrow="Especiales de la semana"
+        title="Platos caseros para volver más de una vez"
+        subtitle="Una selección simple para destacar novedades, promociones o platos recomendados según el día. Los precios quedan como placeholders claros hasta cargar los valores reales."
       />
       <div className="weeklyGrid">
         {weeklyMenu.map((item) => (

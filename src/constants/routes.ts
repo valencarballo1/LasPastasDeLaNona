@@ -1,0 +1,19 @@
+export const routes = {
+  home: "/",
+  carta: "/carta",
+  fabrica: "/fabrica",
+  eventos: "/eventos",
+  nosotros: "/nosotros",
+  contacto: "/contacto",
+  producto: (slug: string) => `/producto/${slug}`,
+  admin: {
+    login: "/admin/login",
+    dashboard: "/admin",
+    productos: "/admin/productos",
+    productoNuevo: "/admin/productos/nuevo",
+    productoEditar: (id: number | string) => `/admin/productos/${id}`,
+    categorias: "/admin/categorias",
+    eventos: "/admin/eventos",
+    configuracion: "/admin/configuracion",
+  },
+} as const;

@@ -53,6 +53,12 @@ Evitar: fotografía corporativa, fondos artificiales, stock demasiado perfecto.
 
 Mientras no hay fotos reales cargadas, `PhotoFrame` (`src/components/ui/PhotoFrame.tsx`) muestra un placeholder de marca en vez de romper el layout o usar stock genérico.
 
+## Video
+
+El recorrido por el local vive en Cloudinary y se reproduce a demanda en la Home (`VideoSection`), no como fondo del hero: el contenido del video —el salón y los platos— se pierde detrás del overlay oscuro y el recorte a pantalla completa, y cargarlo de entrada penaliza el LCP en celulares, que es de donde llega la mayoría del tráfico.
+
+El asset original es `.mov`; se entrega como `.mp4` mediante la transcodificación al vuelo de Cloudinary, porque QuickTime no se reproduce de forma confiable fuera de Safari. Las URLs están en `siteConfig.video` (`src/config/site.ts`).
+
 ## Tono de comunicación
 
 Hablar como una familia que invita a comer, no como una empresa.

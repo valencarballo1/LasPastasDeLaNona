@@ -3,7 +3,7 @@ import { siteConfig } from "@/config/site";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { PhotoFrame } from "@/components/ui/PhotoFrame";
+import { VideoFrame } from "@/components/ui/VideoFrame";
 import { Timeline } from "@/components/story/Timeline";
 import { Gallery } from "@/components/ui/Gallery";
 
@@ -31,9 +31,9 @@ export default function NosotrosPage() {
       />
 
       <Container className="grid gap-12 py-16 sm:py-20 lg:grid-cols-2 lg:items-center">
-        <PhotoFrame
-          alt="La familia detrás de Las Pastas de la Nona"
-          className="aspect-[4/5] w-full rounded-[var(--radius-card)] shadow-warm"
+        <VideoFrame
+          src={siteConfig.video.embedUrl}
+          title="Video de la familia detrás de Las Pastas de la Nona"
         />
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-red">Nuestro origen</p>

@@ -31,4 +31,9 @@ export const siteConfig = {
       "https://www.google.com/maps?q=Quintana+665,+Burzaco,+Buenos+Aires&output=embed",
     directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Quintana+665,+Burzaco,+Buenos+Aires",
   },
+  video: {
+    // Video institucional alojado en Cloudinary.
+    embedUrl:
+      "https://player.cloudinary.com/embed/?cloud_name=dbciaqldq&public_id=LaNonaVideo_qpdar1",
+  },
 } as const;

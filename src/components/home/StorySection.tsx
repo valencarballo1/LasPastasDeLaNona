@@ -1,7 +1,7 @@
 import { siteConfig } from "@/config/site";
 import { routes } from "@/constants/routes";
 import { LinkButton } from "@/components/ui/Button";
-import { PhotoFrame } from "@/components/ui/PhotoFrame";
+import { VideoFrame } from "@/components/ui/VideoFrame";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -10,9 +10,9 @@ export function StorySection() {
     <section className="bg-warm-white py-20 sm:py-28">
       <Container className="grid items-center gap-12 lg:grid-cols-2">
         <Reveal>
-          <PhotoFrame
-            alt="Elaboración artesanal de pastas en la fábrica de La Nona"
-            className="aspect-[4/5] w-full rounded-[var(--radius-card)] shadow-warm"
+          <VideoFrame
+            src={siteConfig.video.embedUrl}
+            title="Video de la elaboración artesanal de pastas en la fábrica de La Nona"
           />
         </Reveal>
 

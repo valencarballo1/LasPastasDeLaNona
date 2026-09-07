@@ -5,10 +5,8 @@ import { Container } from "@/components/ui/Container";
 import { SiteImage } from "@/components/ui/SiteImage";
 
 export function InstagramTeaser({ images }: { images: ResolvedSiteImage[] }) {
-  const loaded = images.filter((image) => Boolean(image.src));
-
   return (
-    <section className="bg-warm-white py-14 sm:py-16">
+    <section className="bg-warm-white py-20 sm:py-28">
       <Container className="text-center">
         <a
           href={siteConfig.contact.instagramUrl}
@@ -23,21 +21,11 @@ export function InstagramTeaser({ images }: { images: ResolvedSiteImage[] }) {
           Seguinos para ver el día a día de la fábrica, el restaurante y la familia detrás de La Nona.
         </p>
 
-        {/* Sin fotos cargadas se muestra solo el enlace, en vez de una
-            grilla de recuadros vacíos (ver /admin/imagenes). */}
-        {loaded.length > 0 ? (
-          <div className="mx-auto mt-8 grid max-w-3xl grid-cols-3 gap-3 sm:grid-cols-6">
-            {loaded.map((image) => (
-              <SiteImage
-                key={image.key}
-                image={image}
-                className="aspect-square rounded-md"
-                sizes="(min-width: 640px) 128px, 33vw"
-                tone="light"
-              />
-            ))}
-          </div>
-        ) : null}
+        <div className="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-3 sm:grid-cols-6">
+          {images.map((image) => (
+            <SiteImage key={image.key} image={image} className="aspect-square rounded-md" sizes="(min-width: 640px) 128px, 33vw" />
+          ))}
+        </div>
       </Container>
     </section>
   );

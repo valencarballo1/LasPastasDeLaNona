@@ -12,7 +12,7 @@ export async function FeaturedMenuSection() {
   if (featured.length === 0) return null;
 
   return (
-    <section className="bg-warm-white py-16 sm:py-20">
+    <section className="bg-warm-white py-20 sm:py-28">
       <Container>
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <SectionHeading eyebrow="Pasta fresca hecha todos los días" title="De lo mejor de nuestra carta" />
@@ -21,7 +21,7 @@ export async function FeaturedMenuSection() {
           </LinkButton>
         </div>
 
-        <Reveal className="mt-10">
+        <Reveal className="mt-12">
           <ProductGrid products={featured} />
         </Reveal>
       </Container>

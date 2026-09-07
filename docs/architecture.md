@@ -79,16 +79,7 @@ components/ui/SiteImage    → pinta un slot (o el placeholder de marca si todav
 
 Las páginas públicas piden el mapa una sola vez (`getSiteImageMap()`) y lo bajan por props a cada sección, para no multiplicar llamadas a la API.
 
-### Comportamiento sin fotos
-
-Toda la web tiene que verse terminada aunque todavía no haya una sola foto cargada. La regla es que **nada reserva un hueco vacío**:
-
-- Los bloques editoriales (`StorySection`, `DailyMakingSection`) pasan a una columna centrada.
-- La galería del inicio no se muestra si ningún slot tiene foto; el teaser de Instagram deja solo el enlace.
-- Las tarjetas de plato (`ProductCard`) y las líneas de la carta (`MenuItem`) se compactan y mueven sus distintivos al cuerpo.
-- Donde el marco sí es estructural (portadas, tarjetas de "Elegí tu experiencia"), `PhotoFrame` usa `tone`: oscuro sobre fondos oscuros, claro sobre crema — un rectángulo negro sobre fondo claro se lee como un agujero.
-
-El orden de la home está pensado para el cliente antes que para el relato de marca: portada → accesos rápidos (`QuickAccess`) → destacados de la carta → fábrica y restaurante → historia → eventos → galería → dónde estamos.
+Mientras un slot no tiene foto, `PhotoFrame` dibuja el marco de marca. `tone` decide su color: `dark` (carbón con textura) es el default y el que se usa en portadas, galerías y bloques editoriales, donde el marco es el elemento visual y se lee como un mosaico deliberado; `light` (crema con la espiga) se reserva para los marcos que van **dentro** de una tarjeta clara — ficha de plato, línea de la carta, tarjeta de eventos —, donde un recuadro negro se leería como un agujero. Sobre un fondo crema, un marco claro directamente desaparece: por eso no es el default.
 
 ### Subida de archivos
 

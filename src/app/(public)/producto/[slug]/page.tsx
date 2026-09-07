@@ -43,7 +43,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
         alt={product.name}
         className="aspect-[4/3] w-full rounded-[var(--radius-card)] shadow-warm"
         sizes="(min-width: 1024px) 50vw, 100vw"
-        tone="light"
         priority
       />
 

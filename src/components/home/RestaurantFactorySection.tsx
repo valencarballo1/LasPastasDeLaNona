@@ -31,16 +31,16 @@ export function RestaurantFactorySection({ factoryImage, restaurantImage }: Rest
   ];
 
   return (
-    <section className="bg-cream py-16 sm:py-20">
+    <section className="bg-cream py-20 sm:py-28">
       <Container>
         <SectionHeading align="center" eyebrow="Elegí tu experiencia" title="Dos formas de disfrutar La Nona" />
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2">
           {worlds.map((world, index) => (
             <Reveal key={world.title} delay={index * 100}>
               <Link
                 href={world.href}
-                className="group relative block aspect-[16/11] overflow-hidden rounded-[var(--radius-card)] shadow-warm sm:aspect-[4/3]"
+                className="group relative block aspect-[4/5] overflow-hidden rounded-[var(--radius-card)] shadow-warm"
               >
                 <SiteImage
                   image={world.image}
@@ -48,7 +48,7 @@ export function RestaurantFactorySection({ factoryImage, restaurantImage }: Rest
                   sizes="(min-width: 640px) 50vw, 100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/0" />
-                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7">
+                <div className="absolute inset-x-0 bottom-0 p-7 sm:p-9">
                   <h3 className="font-display text-2xl text-warm-white sm:text-3xl">{world.title}</h3>
                   <p className="mt-2 max-w-xs text-sm text-cream/85">{world.description}</p>
                   <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-gold">

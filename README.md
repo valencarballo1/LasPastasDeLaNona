@@ -75,8 +75,6 @@ Disponible en `/admin`:
 | `/admin/eventos` | Solicitudes de presupuesto |
 | `/admin/configuracion` | Contacto, horarios y textos |
 
-La web se ve terminada aunque no haya ninguna foto cargada: las secciones que dependen de imágenes se adaptan o no se muestran, en vez de dejar espacios vacíos.
-
 ### Imágenes
 
 Los platos tienen una foto **opcional**: si no se carga ninguna, el plato se publica igual con el marco de La Nona y se puede completar más adelante editándolo. El dashboard y el filtro "Sin foto" muestran cuáles quedaron pendientes.

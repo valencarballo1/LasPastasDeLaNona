@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { getSiteImageMap } from "@/services/site-image.service";
 import { Hero } from "@/components/home/Hero";
+import { QuickAccess } from "@/components/home/QuickAccess";
 import { StorySection } from "@/components/home/StorySection";
 import { RestaurantFactorySection } from "@/components/home/RestaurantFactorySection";
 import { FeaturedMenuSection } from "@/components/home/FeaturedMenuSection";
 import { DailyMakingSection } from "@/components/home/DailyMakingSection";
 import { EventsTeaser } from "@/components/home/EventsTeaser";
 import { GallerySection } from "@/components/home/GallerySection";
-import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { LocationTeaser } from "@/components/home/LocationTeaser";
 import { InstagramTeaser } from "@/components/home/InstagramTeaser";
 
@@ -15,14 +15,19 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+/**
+ * Las imágenes editables se piden una sola vez y bajan por props a cada
+ * sección (ver src/constants/site-images.ts y /admin/imagenes). Las
+ * secciones que dependen de fotos todavía no cargadas se adaptan o no se
+ * muestran, para que el inicio nunca quede lleno de marcos vacíos.
+ */
 export default async function HomePage() {
-  // Las imágenes editables se piden una sola vez y bajan por props a cada
-  // sección (ver src/constants/site-images.ts y /admin/imagenes).
   const images = await getSiteImageMap();
 
   return (
     <>
       <Hero image={images["home.hero"]} />
+      <QuickAccess />
       <StorySection image={images["home.story"]} />
       <RestaurantFactorySection
         factoryImage={images["home.worlds.factory"]}
@@ -40,7 +45,6 @@ export default async function HomePage() {
           images["home.gallery.5"],
         ]}
       />
-      <TestimonialsSection />
       <LocationTeaser />
       <InstagramTeaser
         images={[

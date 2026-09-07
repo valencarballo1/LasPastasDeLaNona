@@ -3,10 +3,13 @@ import { siteConfig } from "@/config/site";
 import type { ResolvedSiteImage } from "@/services/site-image.service";
 import { Container } from "@/components/ui/Container";
 import { SiteImage } from "@/components/ui/SiteImage";
+import { cn } from "@/lib/utils";
 
 export function InstagramTeaser({ images }: { images: ResolvedSiteImage[] }) {
+  const loaded = images.filter((image) => Boolean(image.src));
+
   return (
-    <section className="bg-warm-white py-20 sm:py-28">
+    <section className={cn("bg-warm-white", loaded.length > 0 ? "py-20 sm:py-28" : "py-14 sm:py-16")}>
       <Container className="text-center">
         <a
           href={siteConfig.contact.instagramUrl}
@@ -21,11 +24,20 @@ export function InstagramTeaser({ images }: { images: ResolvedSiteImage[] }) {
           Seguinos para ver el día a día de la fábrica, el restaurante y la familia detrás de La Nona.
         </p>
 
-        <div className="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-3 sm:grid-cols-6">
-          {images.map((image) => (
-            <SiteImage key={image.key} image={image} className="aspect-square rounded-md" sizes="(min-width: 640px) 128px, 33vw" />
-          ))}
-        </div>
+        {/* Sin fotos cargadas queda solo el enlace, en vez de una grilla de
+            recuadros vacíos (ver /admin/imagenes). */}
+        {loaded.length > 0 ? (
+          <div className="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-3 sm:grid-cols-6">
+            {loaded.map((image) => (
+              <SiteImage
+                key={image.key}
+                image={image}
+                className="aspect-square rounded-md"
+                sizes="(min-width: 640px) 128px, 33vw"
+              />
+            ))}
+          </div>
+        ) : null}
       </Container>
     </section>
   );

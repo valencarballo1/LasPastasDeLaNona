@@ -12,13 +12,17 @@ export function MenuItem({ product }: { product: ProductDto }) {
         !product.available && "opacity-60",
       )}
     >
-      <PhotoFrame
-        src={product.imageUrl}
-        alt={product.name}
-        className="h-20 w-20 shrink-0 rounded-md sm:h-24 sm:w-24"
-        tone="light"
-        sizes="96px"
-      />
+      {/* Sin foto el plato ocupa todo el ancho, en vez de dejar un recuadro
+          vacío a la izquierda de cada línea de la carta. */}
+      {product.imageUrl ? (
+        <PhotoFrame
+          src={product.imageUrl}
+          alt={product.name}
+          className="h-20 w-20 shrink-0 rounded-md sm:h-24 sm:w-24"
+          tone="light"
+          sizes="96px"
+        />
+      ) : null}
 
       <div className="flex flex-1 flex-col">
         <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1">

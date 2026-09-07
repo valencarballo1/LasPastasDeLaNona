@@ -17,7 +17,7 @@ interface PageHeaderProps {
 export function PageHeader({ eyebrow, title, description, image, children }: PageHeaderProps) {
   return (
     <section className="relative flex min-h-[52vh] items-end overflow-hidden bg-carbon pb-14 pt-32 sm:min-h-[46vh]">
-      <SiteImage image={image} className="absolute inset-0" priority />
+      <SiteImage image={image} className="absolute inset-0" priority placeholderIcon={false} />
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30" />
 
       <Container className="relative z-10">

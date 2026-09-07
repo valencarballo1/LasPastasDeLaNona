@@ -9,7 +9,7 @@ import { Reveal } from "@/components/ui/Reveal";
 export function EventsTeaser({ image }: { image: ResolvedSiteImage }) {
   return (
     <section className="relative overflow-hidden bg-carbon py-20 sm:py-28">
-      <SiteImage image={image} className="absolute inset-0 opacity-25" />
+      <SiteImage image={image} className="absolute inset-0 opacity-25" placeholderIcon={false} />
       <div className="absolute inset-0 bg-gradient-to-b from-carbon via-carbon/90 to-carbon" />
 
       <Container className="relative z-10 text-center">

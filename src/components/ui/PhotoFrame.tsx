@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { UtensilsCrossed, Wheat } from "lucide-react";
+import { Wheat } from "lucide-react";
 import { isInlineImageUrl } from "@/lib/image-file";
 import { cn } from "@/lib/utils";
 
@@ -11,17 +11,25 @@ interface PhotoFrameProps {
   priority?: boolean;
   fill?: boolean;
   /**
-   * Color del marco que se muestra mientras no hay foto. `dark` para
-   * fondos oscuros (portadas), `light` para bloques sobre crema —
-   * un rectángulo negro sobre fondo claro se lee como un agujero.
+   * Color del marco que se muestra mientras no hay foto. `dark` para los
+   * fondos grandes (portadas, tarjetas con texto encima); `light` para los
+   * marcos que van dentro de una tarjeta clara, donde un recuadro oscuro
+   * se leería como un agujero.
    */
   tone?: "dark" | "light";
+  /**
+   * `false` en los marcos que hacen de fondo a pantalla completa: ahí el
+   * icono queda suelto en el medio y se cruza con el texto. Se deja en los
+   * marcos que ocupan el lugar de una foto concreta.
+   */
+  placeholderIcon?: boolean;
 }
 
 /**
  * Envoltorio de next/image que resuelve elegantemente la ausencia de
  * fotografía real: en vez de romper el layout o usar stock, muestra un
- * placeholder de marca hasta que se cargue la imagen definitiva.
+ * fondo de marca —ladrillo del local— hasta que se cargue la foto
+ * definitiva desde /admin/imagenes.
  */
 export function PhotoFrame({
   src,
@@ -31,22 +39,38 @@ export function PhotoFrame({
   priority,
   fill = true,
   tone = "dark",
+  placeholderIcon = true,
 }: PhotoFrameProps) {
   if (!src) {
     const isDark = tone === "dark";
-    const Icon = isDark ? UtensilsCrossed : Wheat;
 
     return (
+      /* `texture-brick`/`texture-paper` pintan un background-image, así que el
+         color de base tiene que ser un background-color (si no, un gradiente
+         de Tailwind lo pisa y el marco queda transparente). El matiz cálido
+         va en una capa aparte. */
       <div
         className={cn(
-          "flex items-center justify-center",
-          isDark ? "texture-brick bg-carbon text-gold/50" : "texture-paper bg-cream text-red/25",
+          "relative flex items-center justify-center overflow-hidden",
+          isDark ? "texture-brick bg-carbon" : "texture-paper bg-cream",
           className,
         )}
         role="img"
         aria-label={alt}
       >
-        <Icon className="h-9 w-9" strokeWidth={1.25} />
+        {isDark ? (
+          <span
+            className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-wood/10 to-wood/35"
+            aria-hidden="true"
+          />
+        ) : null}
+        {placeholderIcon ? (
+          <Wheat
+            className={cn("h-10 w-10", isDark ? "text-gold/25" : "text-red/20")}
+            strokeWidth={1}
+            aria-hidden="true"
+          />
+        ) : null}
       </div>
     );
   }

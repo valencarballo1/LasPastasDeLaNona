@@ -5,14 +5,32 @@ import type { ResolvedSiteImage } from "@/services/site-image.service";
 import { LinkButton } from "@/components/ui/Button";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { Container } from "@/components/ui/Container";
+import { cn } from "@/lib/utils";
 
 export function Hero({ image }: { image: ResolvedSiteImage }) {
-  return (
-    <section className="relative flex min-h-[100svh] items-end overflow-hidden bg-carbon">
-      <SiteImage image={image} className="absolute inset-0" priority />
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
+  // Con foto, el texto se apoya abajo y el velo oscuro le da contraste.
+  // Sin foto, se centra y el velo se suaviza: si no, queda un tercio de
+  // pantalla vacío sobre un rectángulo plano.
+  const hasPhoto = Boolean(image.src);
 
-      <Container className="relative z-10 pb-20 pt-40 sm:pb-24">
+  return (
+    <section
+      className={cn(
+        "relative flex overflow-hidden bg-carbon",
+        hasPhoto ? "min-h-[100svh] items-end" : "min-h-[72svh] items-center",
+      )}
+    >
+      <SiteImage image={image} className="absolute inset-0" priority placeholderIcon={false} />
+      <div
+        className={cn(
+          "absolute inset-0",
+          hasPhoto
+            ? "bg-gradient-to-t from-black via-black/60 to-black/20"
+            : "bg-gradient-to-t from-black/70 via-transparent to-black/40",
+        )}
+      />
+
+      <Container className={cn("relative z-10", hasPhoto ? "pb-20 pt-40 sm:pb-24" : "pb-16 pt-32")}>
         <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gold">
           Desde {siteConfig.foundingYear} en Burzaco
         </p>

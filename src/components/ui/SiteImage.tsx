@@ -10,6 +10,8 @@ interface SiteImageProps {
   alt?: string;
   /** Color del marco mientras el slot no tiene foto. */
   tone?: "dark" | "light";
+  /** `false` cuando el marco hace de fondo a pantalla completa. */
+  placeholderIcon?: boolean;
 }
 
 /**
@@ -17,7 +19,7 @@ interface SiteImageProps {
  * `src/constants/site-images.ts`). Si el slot todavía no tiene foto,
  * `PhotoFrame` muestra el placeholder de marca.
  */
-export function SiteImage({ image, className, sizes, priority, alt, tone }: SiteImageProps) {
+export function SiteImage({ image, className, sizes, priority, alt, tone, placeholderIcon }: SiteImageProps) {
   return (
     <PhotoFrame
       src={image.src}
@@ -26,6 +28,7 @@ export function SiteImage({ image, className, sizes, priority, alt, tone }: Site
       sizes={sizes}
       priority={priority}
       tone={tone}
+      placeholderIcon={placeholderIcon}
     />
   );
 }

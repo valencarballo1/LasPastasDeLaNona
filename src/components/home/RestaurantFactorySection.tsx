@@ -40,7 +40,7 @@ export function RestaurantFactorySection({ factoryImage, restaurantImage }: Rest
             <Reveal key={world.title} delay={index * 100}>
               <Link
                 href={world.href}
-                className="group relative block aspect-[4/5] overflow-hidden rounded-[var(--radius-card)] shadow-warm"
+                className="group relative block aspect-[16/11] overflow-hidden rounded-[var(--radius-card)] shadow-warm sm:aspect-[4/3]"
               >
                 <SiteImage
                   image={world.image}

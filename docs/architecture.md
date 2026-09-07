@@ -79,7 +79,19 @@ components/ui/SiteImage    → pinta un slot (o el placeholder de marca si todav
 
 Las páginas públicas piden el mapa una sola vez (`getSiteImageMap()`) y lo bajan por props a cada sección, para no multiplicar llamadas a la API.
 
-Mientras un slot no tiene foto, `PhotoFrame` dibuja el marco de marca. `tone` decide su color: `dark` (carbón con textura) es el default y el que se usa en portadas, galerías y bloques editoriales, donde el marco es el elemento visual y se lee como un mosaico deliberado; `light` (crema con la espiga) se reserva para los marcos que van **dentro** de una tarjeta clara — ficha de plato, línea de la carta, tarjeta de eventos —, donde un recuadro negro se leería como un agujero. Sobre un fondo crema, un marco claro directamente desaparece: por eso no es el default.
+### Comportamiento sin fotos
+
+El inicio tiene que verse terminado aunque no haya una sola foto cargada. La regla es que **ninguna sección deja un marco vacío ocupando pantalla**:
+
+- El hero se centra, se acorta y suaviza su velo cuando no hay foto (con foto vuelve a pantalla completa, con el texto apoyado abajo).
+- Los bloques editoriales (`StorySection`, `DailyMakingSection`) pasan a una columna centrada.
+- La galería no se muestra si ningún slot tiene foto; el teaser de Instagram deja solo el enlace y se compacta.
+- Las tarjetas de plato (`ProductCard`) y las líneas de la carta (`MenuItem`) se compactan y mueven sus distintivos al cuerpo.
+- Los testimonios no están montados hasta que haya opiniones reales.
+
+`PhotoFrame` dibuja el marco de marca —ladrillo del local— mientras no hay foto. `tone` decide su color: `dark` (carbón con textura y un matiz cálido) para fondos y tarjetas con texto encima; `light` (crema con la espiga) para los marcos que van **dentro** de una tarjeta clara, donde un recuadro oscuro se leería como un agujero. Sobre un fondo crema un marco claro desaparece, por eso no es el default. `placeholderIcon={false}` quita la espiga en los marcos que hacen de fondo a pantalla completa, donde el icono queda suelto y se cruza con el texto.
+
+Cuidado al tocarlo: `texture-brick`/`texture-paper` pintan un `background-image`, así que el color de base del marco tiene que ser un `background-color`. Un gradiente de Tailwind en la misma clase pisa la textura y deja el marco transparente.
 
 ### Subida de archivos
 

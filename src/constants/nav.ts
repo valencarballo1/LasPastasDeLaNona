@@ -16,6 +16,7 @@ export const adminNavLinks = [
   { label: "Carta", href: routes.carta },
   { label: "Productos", href: routes.admin.productos },
   { label: "Categorías", href: routes.admin.categorias },
+  { label: "Imágenes", href: routes.admin.imagenes },
   { label: "Eventos", href: routes.admin.eventos },
   { label: "Configuración", href: routes.admin.configuracion },
 ] as const;

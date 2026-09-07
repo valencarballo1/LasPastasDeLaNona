@@ -23,6 +23,8 @@ Ya definidos en TypeScript en `src/types/`:
 - `ProductDto` (`src/types/product.ts`)
 - `EventRequestDto` / `CreateEventRequestDto` (`src/types/event.ts`)
 - `SettingsDto` (`src/types/settings.ts`)
+- `SiteImageDto` / `UpdateSiteImagePayload` (`src/types/site-image.ts`)
+- `MediaAssetDto` (`src/types/media.ts`)
 - `AuthSessionDto` / `LoginPayload` (`src/types/auth.ts`)
 
 El backend en C# debe modelar sus DTOs con los mismos campos y tipos equivalentes (`int` ↔ `number`, `string?` ↔ `string | undefined`, enums de string para `CategoryType` / `EventServiceType` / `EventRequestStatus`).
@@ -36,6 +38,7 @@ GET  /api/categories?type={RESTAURANT|FACTORY}
 GET  /api/products?categoryId={id}&featured={bool}
 GET  /api/products/{slug}
 GET  /api/settings
+GET  /api/site-images
 POST /api/event-requests
 ```
 
@@ -56,9 +59,21 @@ GET    /api/admin/event-requests
 PUT    /api/admin/event-requests/{id}     → actualizar estado
 
 PUT    /api/admin/settings
+
+PUT    /api/admin/site-images/{key}       → { imageUrl, alt } (null quita la imagen)
+POST   /api/admin/media                   → multipart/form-data, campo "file" → MediaAssetDto
 ```
 
 Ver `src/services/api/endpoints.ts` para la lista completa ya reflejada en el frontend.
+
+## Imágenes
+
+Hay dos usos distintos, con el mismo mecanismo de subida:
+
+- **Foto del plato**: `ProductDto.imageUrl` es opcional. Un plato sin foto es un estado válido y esperado; la web lo publica igual con un placeholder de marca. El backend no debe exigir imagen para crear un producto.
+- **Imágenes de la web**: `SiteImageDto` es un par `(key, imageUrl, alt)`. La `key` la define el frontend en `src/constants/site-images.ts` (`home.hero`, `page.carta.header`, `home.gallery.1`, `brand.logo`, ...). El backend guarda claves opaco: no necesita conocer el catálogo ni validarlo contra una lista cerrada, y `GET /api/site-images` puede devolver solo las que tengan valor cargado — el frontend completa el resto desde su catálogo.
+
+`POST /api/admin/media` recibe el archivo (`multipart/form-data`, campo `file`), lo guarda (disco, S3, Azure Blob) y devuelve un `MediaAssetDto` con la **URL pública ya resuelta**. El frontend nunca construye rutas de archivos: solo persiste la `url` que recibe. Restricciones que conviene validar del lado del servidor, además del cliente: tipos `image/jpeg|png|webp|avif|svg+xml` y un máximo de 5 MB.
 
 ## Autenticación
 

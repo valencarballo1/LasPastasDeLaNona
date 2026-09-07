@@ -64,11 +64,29 @@ Ver `docs/architecture.md` para el detalle de cada capa.
 
 ## Panel administrativo
 
-Disponible en `/admin`. El login (`/admin/login`) es **mock**: acepta cualquier email/contraseña con formato válido y genera una sesión ficticia en `localStorage`, solo para poder navegar el panel mientras no existe el backend. No debe considerarse un mecanismo de autenticación real — ver `docs/backend-contract.md` para el reemplazo con JWT.
+Disponible en `/admin`:
+
+| Sección | Qué permite |
+| --- | --- |
+| `/admin` | Resumen: platos publicados, sin stock, **platos sin foto** e imágenes de la web cargadas |
+| `/admin/productos` | Crear, editar, quitar de la carta (sin borrar), marcar sin stock y eliminar platos. Filtros por categoría, estado y **fotos faltantes** |
+| `/admin/categorias` | Categorías del restaurante y de la fábrica |
+| `/admin/imagenes` | Todas las imágenes de la web, agrupadas por sección |
+| `/admin/eventos` | Solicitudes de presupuesto |
+| `/admin/configuracion` | Contacto, horarios y textos |
+
+### Imágenes
+
+Los platos tienen una foto **opcional**: si no se carga ninguna, el plato se publica igual con el marco de La Nona y se puede completar más adelante editándolo. El dashboard y el filtro "Sin foto" muestran cuáles quedaron pendientes.
+
+Las imágenes del resto de la web se administran en `/admin/imagenes`, agrupadas por dónde aparecen: cabecera del inicio, portadas de cada página, secciones del inicio, galería, Instagram, servicios de eventos, nuestra historia y marca (logo). En las dos pantallas se puede subir un archivo desde el dispositivo o pegar una URL. El catálogo de imágenes vive en `src/constants/site-images.ts`.
+
+El login (`/admin/login`) es **mock**: acepta cualquier email/contraseña con formato válido y genera una sesión ficticia en `localStorage`, solo para poder navegar el panel mientras no existe el backend. No debe considerarse un mecanismo de autenticación real — ver `docs/backend-contract.md` para el reemplazo con JWT.
 
 ## Documentación
 
 - [`docs/brand.md`](docs/brand.md) — identidad de marca
 - [`docs/architecture.md`](docs/architecture.md) — arquitectura del frontend
 - [`docs/backend-contract.md`](docs/backend-contract.md) — propuesta de API en ASP.NET Core
+- [`docs/backend-prompt.md`](docs/backend-prompt.md) — prompt listo para generar ese backend
 - [`docs/content-guide.md`](docs/content-guide.md) — guía de tono y contenido

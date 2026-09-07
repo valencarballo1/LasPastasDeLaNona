@@ -21,7 +21,7 @@ export function useCreateCategoryMutation() {
 export function useUpdateCategoryMutation() {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: ({ id, data }: { id: number; data: Partial<Omit<CategoryDto, "id">> }) => updateCategory(id, data),
+    mutationFn: ({ id, data }: { id: number; data: Omit<CategoryDto, "id"> }) => updateCategory(id, data),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: categoriesKey }),
   });
 }

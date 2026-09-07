@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getFactoryCatalog } from "@/services/menu.service";
+import { getSiteImageMap } from "@/services/site-image.service";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { ProductGrid } from "@/components/products/ProductGrid";
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default async function FabricaPage() {
-  const catalog = await getFactoryCatalog();
+  const [catalog, images] = await Promise.all([getFactoryCatalog(), getSiteImageMap()]);
 
   return (
     <>
@@ -21,6 +22,7 @@ export default async function FabricaPage() {
         eyebrow="Nuestra fábrica"
         title="Pasta fresca para llevar a tu mesa"
         description="Elaboramos todos los días las mismas pastas que servimos en el restaurante, listas para cocinar en tu casa."
+        image={images["page.fabrica.header"]}
       />
 
       <Container className="py-16 sm:py-20">

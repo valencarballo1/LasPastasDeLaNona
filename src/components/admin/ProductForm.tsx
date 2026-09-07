@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { Controller, useForm, useWatch } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { productSchema, type ProductFormValues } from "@/lib/validations/product";
@@ -13,6 +13,7 @@ import { Input, Select, Textarea } from "@/components/ui/Input";
 import { Checkbox } from "@/components/ui/Checkbox";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { ImageUploadField } from "@/components/admin/ImageUploadField";
 
 interface ProductFormProps {
   categories: CategoryDto[];
@@ -26,6 +27,7 @@ export function ProductForm({ categories, product, onSubmit }: ProductFormProps)
 
   const {
     register,
+    control,
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<ProductFormValues>({
@@ -44,6 +46,9 @@ export function ProductForm({ categories, product, onSubmit }: ProductFormProps)
       sortOrder: product?.sortOrder ?? 0,
     },
   });
+
+  // Solo para el texto alternativo de la vista previa de la imagen.
+  const name = useWatch({ control, name: "name" });
 
   const submit = handleSubmit(async (values) => {
     setError(null);
@@ -89,18 +94,45 @@ export function ProductForm({ categories, product, onSubmit }: ProductFormProps)
           <Input id="sortOrder" type="number" {...register("sortOrder")} />
         </FormField>
 
-        <FormField label="Imagen (URL)" htmlFor="imageUrl" error={errors.imageUrl?.message} className="sm:col-span-2">
-          <Input id="imageUrl" placeholder="https://..." {...register("imageUrl")} />
-        </FormField>
+        <fieldset className="flex flex-col gap-1.5 sm:col-span-2">
+          <legend className="text-sm font-semibold text-carbon">Imagen del plato</legend>
+          {/* La subida es asincrónica y devuelve la URL final, así que el campo
+              se controla con Controller en vez de registrarse como input. */}
+          <Controller
+            control={control}
+            name="imageUrl"
+            render={({ field }) => (
+              <ImageUploadField
+                value={field.value || undefined}
+                onChange={(url) => field.onChange(url ?? "")}
+                previewAlt={name?.trim() || "Imagen del plato"}
+                aspect="4 / 3"
+                disabled={isSubmitting}
+                hint="Se ve en la carta, en el catálogo de la fábrica y en la página del plato."
+              />
+            )}
+          />
+          {errors.imageUrl?.message ? (
+            <p role="alert" className="text-xs font-medium text-red">
+              {errors.imageUrl.message}
+            </p>
+          ) : null}
+        </fieldset>
 
         <FormField label="Descripción" htmlFor="description" error={errors.description?.message} className="sm:col-span-2">
           <Textarea id="description" {...register("description")} />
         </FormField>
 
-        <div className="flex flex-wrap gap-6 sm:col-span-2">
-          <Checkbox id="available" label="Disponible" {...register("available")} />
-          <Checkbox id="featured" label="Destacado" {...register("featured")} />
-          <Checkbox id="active" label="Activo" {...register("active")} />
+        <div className="flex flex-col gap-3 sm:col-span-2">
+          <div className="flex flex-wrap gap-6">
+            <Checkbox id="available" label="Con stock" {...register("available")} />
+            <Checkbox id="featured" label="Destacado" {...register("featured")} />
+            <Checkbox id="active" label="Publicado en la carta" {...register("active")} />
+          </div>
+          <p className="text-xs text-muted">
+            Sin stock: se muestra igual, marcado como no disponible. Sin publicar: sale de la carta y de la web,
+            pero el plato se conserva para volver a publicarlo cuando quieras.
+          </p>
         </div>
 
         {error ? (

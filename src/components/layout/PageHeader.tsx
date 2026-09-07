@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
-import { PhotoFrame } from "@/components/ui/PhotoFrame";
+import type { ResolvedSiteImage } from "@/services/site-image.service";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { OrnamentDivider } from "@/components/ui/OrnamentDivider";
 import { Container } from "@/components/ui/Container";
 
@@ -7,15 +8,16 @@ interface PageHeaderProps {
   eyebrow: string;
   title: string;
   description?: string;
-  imageSrc?: string;
+  /** Foto de fondo, editable desde /admin/imagenes. */
+  image: ResolvedSiteImage;
   children?: ReactNode;
 }
 
 /** Encabezado oscuro reutilizable para las páginas interiores (carta, fábrica, eventos, etc). */
-export function PageHeader({ eyebrow, title, description, imageSrc, children }: PageHeaderProps) {
+export function PageHeader({ eyebrow, title, description, image, children }: PageHeaderProps) {
   return (
     <section className="relative flex min-h-[52vh] items-end overflow-hidden bg-carbon pb-14 pt-32 sm:min-h-[46vh]">
-      <PhotoFrame src={imageSrc} alt={title} className="absolute inset-0" priority />
+      <SiteImage image={image} className="absolute inset-0" priority />
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30" />
 
       <Container className="relative z-10">

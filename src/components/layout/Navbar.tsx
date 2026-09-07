@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { useState } from "react";
@@ -9,9 +8,15 @@ import { routes } from "@/constants/routes";
 import { useScrolled } from "@/hooks/use-scroll-position";
 import { LinkButton } from "@/components/ui/Button";
 import { MobileMenu } from "@/components/layout/MobileMenu";
+import { BrandLogo } from "@/components/layout/BrandLogo";
 import { cn } from "@/lib/utils";
 
-export function Navbar() {
+interface NavbarProps {
+  logoSrc: string;
+  logoAlt: string;
+}
+
+export function Navbar({ logoSrc, logoAlt }: NavbarProps) {
   const scrolled = useScrolled(40);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -24,14 +29,7 @@ export function Navbar() {
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-3 sm:px-8 lg:px-12">
         <Link href={routes.home} className="flex items-center gap-3">
-          <Image
-            src="/images/brand/logo.png"
-            alt="Las Pastas de la Nona"
-            width={44}
-            height={44}
-            className="h-11 w-11 rounded-full object-cover"
-            priority
-          />
+          <BrandLogo src={logoSrc} alt={logoAlt} size={44} className="h-11 w-11" priority />
           <span className="hidden font-display text-lg leading-tight text-warm-white sm:block">
             Las Pastas
             <br />

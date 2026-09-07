@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Instagram, MapPin, MessageCircle } from "lucide-react";
 import { getSettings } from "@/services/settings.service";
+import { getSiteImageMap } from "@/services/site-image.service";
 import { siteConfig } from "@/config/site";
 import { whatsAppMessageGeneral } from "@/lib/whatsapp";
 import { PageHeader } from "@/components/layout/PageHeader";
@@ -16,11 +17,16 @@ export const metadata: Metadata = {
 };
 
 export default async function ContactoPage() {
-  const settings = await getSettings();
+  const [settings, images] = await Promise.all([getSettings(), getSiteImageMap()]);
 
   return (
     <>
-      <PageHeader eyebrow="Contacto" title="Te esperamos" description="Vení a conocernos o escribinos, elegí lo que te resulte más cómodo." />
+      <PageHeader
+        eyebrow="Contacto"
+        title="Te esperamos"
+        description="Vení a conocernos o escribinos, elegí lo que te resulte más cómodo."
+        image={images["page.contacto.header"]}
+      />
 
       <Container className="grid gap-10 py-16 sm:py-20 lg:grid-cols-2">
         <Card className="p-6 sm:p-8">

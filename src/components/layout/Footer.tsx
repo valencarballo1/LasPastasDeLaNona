@@ -1,25 +1,24 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Instagram, MapPin, MessageCircle } from "lucide-react";
 import { footerNavLinks } from "@/constants/nav";
 import { siteConfig } from "@/config/site";
 import { whatsAppMessageGeneral } from "@/lib/whatsapp";
 import { OrnamentDivider } from "@/components/ui/OrnamentDivider";
+import { BrandLogo } from "@/components/layout/BrandLogo";
 
-export function Footer() {
+interface FooterProps {
+  logoSrc: string;
+  logoAlt: string;
+}
+
+export function Footer({ logoSrc, logoAlt }: FooterProps) {
   return (
     <footer className="texture-brick bg-black text-cream">
       <div className="mx-auto w-full max-w-7xl px-5 py-14 sm:px-8 lg:px-12">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-3">
-              <Image
-                src="/images/brand/logo.png"
-                alt={siteConfig.name}
-                width={48}
-                height={48}
-                className="h-12 w-12 rounded-full object-cover"
-              />
+              <BrandLogo src={logoSrc} alt={logoAlt} size={48} className="h-12 w-12" />
               <span className="font-display text-lg text-warm-white">{siteConfig.name}</span>
             </div>
             <p className="mt-4 flex items-start gap-2 text-sm text-cream/70">

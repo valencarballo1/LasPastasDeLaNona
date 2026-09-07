@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { X, LayoutDashboard, BookOpenText, Package, FolderTree, PartyPopper, Settings } from "lucide-react";
+import { X, LayoutDashboard, BookOpenText, Package, FolderTree, PartyPopper, Settings, Images } from "lucide-react";
 import { routes } from "@/constants/routes";
 import { cn } from "@/lib/utils";
 
@@ -11,6 +11,7 @@ const links = [
   { label: "Carta", href: routes.carta, icon: BookOpenText },
   { label: "Productos", href: routes.admin.productos, icon: Package },
   { label: "Categorías", href: routes.admin.categorias, icon: FolderTree },
+  { label: "Imágenes", href: routes.admin.imagenes, icon: Images },
   { label: "Eventos", href: routes.admin.eventos, icon: PartyPopper },
   { label: "Configuración", href: routes.admin.configuracion, icon: Settings },
 ] as const;

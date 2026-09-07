@@ -21,7 +21,7 @@ export function useCreateProductMutation() {
 export function useUpdateProductMutation() {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: ({ id, data }: { id: number; data: Partial<Omit<ProductDto, "id">> }) => updateProduct(id, data),
+    mutationFn: ({ id, data }: { id: number; data: Omit<ProductDto, "id"> }) => updateProduct(id, data),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: productsKey }),
   });
 }

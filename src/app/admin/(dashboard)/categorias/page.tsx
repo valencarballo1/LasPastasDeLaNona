@@ -9,6 +9,7 @@ import {
 } from "@/features/categories/use-admin-categories";
 import type { CategoryDto } from "@/types/category";
 import type { CategoryFormValues } from "@/lib/validations/category";
+import { withoutId } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
@@ -42,11 +43,17 @@ export default function AdminCategoriasPage() {
   }
 
   function toggleActive(category: CategoryDto) {
-    updateCategoryMutation.mutate({ id: category.id, data: { active: !category.active } });
+    updateCategoryMutation.mutate({
+      id: category.id,
+      data: { ...withoutId(category), active: !category.active },
+    });
   }
 
   function move(category: CategoryDto, direction: -1 | 1) {
-    updateCategoryMutation.mutate({ id: category.id, data: { sortOrder: category.sortOrder + direction } });
+    updateCategoryMutation.mutate({
+      id: category.id,
+      data: { ...withoutId(category), sortOrder: Math.max(0, category.sortOrder + direction) },
+    });
   }
 
   if (categoriesQuery.isPending) return <LoadingState label="Cargando categorías..." />;

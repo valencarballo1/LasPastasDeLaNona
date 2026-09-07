@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getMenu } from "@/services/menu.service";
+import { getSiteImageMap } from "@/services/site-image.service";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { MenuNavigation } from "@/components/menu/MenuNavigation";
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default async function CartaPage() {
-  const menu = await getMenu();
+  const [menu, images] = await Promise.all([getMenu(), getSiteImageMap()]);
 
   return (
     <>
@@ -22,6 +23,7 @@ export default async function CartaPage() {
         eyebrow="Nuestra carta"
         title="Elegí tus pastas"
         description="Recetas de siempre, salsas caseras y comida abundante para compartir en nuestra mesa."
+        image={images["page.carta.header"]}
       />
 
       <MenuNavigation categories={menu.map((category) => ({ slug: category.slug, name: category.name }))} />

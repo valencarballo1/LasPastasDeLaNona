@@ -28,10 +28,14 @@ async function request<T>(path: string, { params, headers, ...init }: RequestOpt
     });
   }
 
+  // FormData trae su propio Content-Type (con el boundary): si lo forzamos
+  // a JSON el backend no puede parsear la subida de archivos.
+  const isFormData = typeof FormData !== "undefined" && init.body instanceof FormData;
+
   const response = await fetch(url.toString(), {
     ...init,
     headers: {
-      "Content-Type": "application/json",
+      ...(isFormData ? {} : { "Content-Type": "application/json" }),
       ...headers,
     },
   });
@@ -52,4 +56,6 @@ export const apiClient = {
   put: <T>(path: string, body?: unknown) =>
     request<T>(path, { method: "PUT", body: body ? JSON.stringify(body) : undefined }),
   delete: <T>(path: string) => request<T>(path, { method: "DELETE" }),
+  /** POST multipart/form-data — usado para subir imágenes. */
+  upload: <T>(path: string, formData: FormData) => request<T>(path, { method: "POST", body: formData }),
 };

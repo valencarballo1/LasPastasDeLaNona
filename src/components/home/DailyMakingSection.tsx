@@ -1,9 +1,10 @@
-import { PhotoFrame } from "@/components/ui/PhotoFrame";
+import type { ResolvedSiteImage } from "@/services/site-image.service";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
 /** Bloque editorial: pasta fresca hecha todos los días en la fábrica. */
-export function DailyMakingSection() {
+export function DailyMakingSection({ image }: { image: ResolvedSiteImage }) {
   return (
     <section className="bg-cream py-20 sm:py-28">
       <Container className="grid items-center gap-12 lg:grid-cols-2">
@@ -19,9 +20,10 @@ export function DailyMakingSection() {
         </Reveal>
 
         <Reveal delay={100} className="order-1 lg:order-2">
-          <PhotoFrame
-            alt="Manos amasando pasta fresca en la fábrica de La Nona"
+          <SiteImage
+            image={image}
             className="aspect-[4/5] w-full rounded-[var(--radius-card)] shadow-warm"
+            sizes="(min-width: 1024px) 50vw, 100vw"
           />
         </Reveal>
       </Container>

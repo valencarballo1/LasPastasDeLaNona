@@ -1,19 +1,15 @@
 import { MapPin } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { routes } from "@/constants/routes";
+import type { ResolvedSiteImage } from "@/services/site-image.service";
 import { LinkButton } from "@/components/ui/Button";
-import { PhotoFrame } from "@/components/ui/PhotoFrame";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { Container } from "@/components/ui/Container";
 
-export function Hero() {
+export function Hero({ image }: { image: ResolvedSiteImage }) {
   return (
     <section className="relative flex min-h-[100svh] items-end overflow-hidden bg-carbon">
-      <PhotoFrame
-        src={undefined}
-        alt="Mesa servida en Las Pastas de la Nona, con mantel a cuadros y ambiente cálido"
-        className="absolute inset-0"
-        priority
-      />
+      <SiteImage image={image} className="absolute inset-0" priority />
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
 
       <Container className="relative z-10 pb-20 pt-40 sm:pb-24">

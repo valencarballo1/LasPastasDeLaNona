@@ -15,6 +15,7 @@ const titles: Record<string, string> = {
   [routes.admin.productos]: "Productos",
   [routes.admin.productoNuevo]: "Nuevo producto",
   [routes.admin.categorias]: "Categorías",
+  [routes.admin.imagenes]: "Imágenes de la web",
   [routes.admin.eventos]: "Solicitudes de eventos",
   [routes.admin.configuracion]: "Configuración",
 };

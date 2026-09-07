@@ -7,6 +7,10 @@ import { mockEventRepository } from "@/services/repositories/mock-event.reposito
 import { apiEventRepository } from "@/services/repositories/api-event.repository";
 import { mockSettingsRepository } from "@/services/repositories/mock-settings.repository";
 import { apiSettingsRepository } from "@/services/repositories/api-settings.repository";
+import { mockSiteImageRepository } from "@/services/repositories/mock-site-image.repository";
+import { apiSiteImageRepository } from "@/services/repositories/api-site-image.repository";
+import { mockMediaRepository } from "@/services/repositories/mock-media.repository";
+import { apiMediaRepository } from "@/services/repositories/api-media.repository";
 
 /**
  * Único lugar que decide entre datos mock o la API real, según
@@ -19,3 +23,5 @@ export const categoryRepository = isMock ? mockCategoryRepository : apiCategoryR
 export const productRepository = isMock ? mockProductRepository : apiProductRepository;
 export const eventRepository = isMock ? mockEventRepository : apiEventRepository;
 export const settingsRepository = isMock ? mockSettingsRepository : apiSettingsRepository;
+export const siteImageRepository = isMock ? mockSiteImageRepository : apiSiteImageRepository;
+export const mediaRepository = isMock ? mockMediaRepository : apiMediaRepository;

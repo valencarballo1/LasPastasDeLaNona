@@ -1,9 +1,10 @@
 import { Instagram } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import type { ResolvedSiteImage } from "@/services/site-image.service";
 import { Container } from "@/components/ui/Container";
-import { PhotoFrame } from "@/components/ui/PhotoFrame";
+import { SiteImage } from "@/components/ui/SiteImage";
 
-export function InstagramTeaser() {
+export function InstagramTeaser({ images }: { images: ResolvedSiteImage[] }) {
   return (
     <section className="bg-warm-white py-20 sm:py-28">
       <Container className="text-center">
@@ -21,8 +22,8 @@ export function InstagramTeaser() {
         </p>
 
         <div className="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-3 sm:grid-cols-6">
-          {Array.from({ length: 6 }).map((_, index) => (
-            <PhotoFrame key={index} alt="Publicación de Instagram de Las Pastas de la Nona" className="aspect-square rounded-md" />
+          {images.map((image) => (
+            <SiteImage key={image.key} image={image} className="aspect-square rounded-md" sizes="(min-width: 640px) 128px, 33vw" />
           ))}
         </div>
       </Container>

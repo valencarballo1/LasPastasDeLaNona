@@ -1,29 +1,35 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { routes } from "@/constants/routes";
-import { PhotoFrame } from "@/components/ui/PhotoFrame";
+import type { ResolvedSiteImage } from "@/services/site-image.service";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
-const worlds = [
-  {
-    title: "Nuestra fábrica",
-    description: "Pastas frescas para cocinar en casa.",
-    cta: "Ver productos",
-    href: routes.fabrica,
-    alt: "Vitrina de pastas frescas de la fábrica",
-  },
-  {
-    title: "Nuestro restaurante",
-    description: "Sentate a nuestra mesa y disfrutá la experiencia completa.",
-    cta: "Ver carta",
-    href: routes.carta,
-    alt: "Salón del restaurante con mesas a la espera de comensales",
-  },
-] as const;
+interface RestaurantFactorySectionProps {
+  factoryImage: ResolvedSiteImage;
+  restaurantImage: ResolvedSiteImage;
+}
 
-export function RestaurantFactorySection() {
+export function RestaurantFactorySection({ factoryImage, restaurantImage }: RestaurantFactorySectionProps) {
+  const worlds = [
+    {
+      title: "Nuestra fábrica",
+      description: "Pastas frescas para cocinar en casa.",
+      cta: "Ver productos",
+      href: routes.fabrica,
+      image: factoryImage,
+    },
+    {
+      title: "Nuestro restaurante",
+      description: "Sentate a nuestra mesa y disfrutá la experiencia completa.",
+      cta: "Ver carta",
+      href: routes.carta,
+      image: restaurantImage,
+    },
+  ];
+
   return (
     <section className="bg-cream py-20 sm:py-28">
       <Container>
@@ -36,7 +42,11 @@ export function RestaurantFactorySection() {
                 href={world.href}
                 className="group relative block aspect-[4/5] overflow-hidden rounded-[var(--radius-card)] shadow-warm"
               >
-                <PhotoFrame alt={world.alt} className="absolute inset-0 transition-transform duration-700 group-hover:scale-105" />
+                <SiteImage
+                  image={world.image}
+                  className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/0" />
                 <div className="absolute inset-x-0 bottom-0 p-7 sm:p-9">
                   <h3 className="font-display text-2xl text-warm-white sm:text-3xl">{world.title}</h3>

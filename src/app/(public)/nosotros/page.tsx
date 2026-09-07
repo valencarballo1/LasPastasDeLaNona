@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
+import { getSiteImageMap } from "@/services/site-image.service";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { PhotoFrame } from "@/components/ui/PhotoFrame";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { Timeline } from "@/components/story/Timeline";
 import { Gallery } from "@/components/ui/Gallery";
 
@@ -13,27 +14,30 @@ export const metadata: Metadata = {
   alternates: { canonical: "/nosotros" },
 };
 
-const familyImages = [
-  { alt: "Familia fundadora de Las Pastas de la Nona" },
-  { alt: "Primeros años de la fábrica de pastas" },
-  { alt: "Evolución del restaurante a lo largo de los años" },
-  { alt: "El equipo de La Nona trabajando en la cocina" },
-  { alt: "Detalle de la cartelería del local" },
-];
+export default async function NosotrosPage() {
+  const images = await getSiteImageMap();
+  const familyImages = [
+    images["about.gallery.1"],
+    images["about.gallery.2"],
+    images["about.gallery.3"],
+    images["about.gallery.4"],
+    images["about.gallery.5"],
+  ];
 
-export default function NosotrosPage() {
   return (
     <>
       <PageHeader
         eyebrow="Nuestra historia"
         title="La mesa de la Nona"
         description="Una historia familiar contada a través de la pasta, la fábrica y el restaurante."
+        image={images["page.nosotros.header"]}
       />
 
       <Container className="grid gap-12 py-16 sm:py-20 lg:grid-cols-2 lg:items-center">
-        <PhotoFrame
-          alt="La familia detrás de Las Pastas de la Nona"
+        <SiteImage
+          image={images["about.main"]}
           className="aspect-[4/5] w-full rounded-[var(--radius-card)] shadow-warm"
+          sizes="(min-width: 1024px) 50vw, 100vw"
         />
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-red">Nuestro origen</p>

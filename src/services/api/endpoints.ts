@@ -12,5 +12,9 @@ export const endpoints = {
   adminEventRequest: (id: number | string) => `/api/admin/event-requests/${id}`,
   settings: "/api/settings",
   adminSettings: "/api/admin/settings",
+  siteImages: "/api/site-images",
+  adminSiteImages: "/api/admin/site-images",
+  adminSiteImage: (key: string) => `/api/admin/site-images/${encodeURIComponent(key)}`,
+  adminMedia: "/api/admin/media",
   authLogin: "/api/auth/login",
 } as const;

@@ -1,27 +1,45 @@
 import { MapPin, MessageCircle } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { routes } from "@/constants/routes";
+import { getSettings } from "@/services/settings.service";
 import { whatsAppMessageGeneral } from "@/lib/whatsapp";
 import { LinkButton } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { OpeningHours } from "@/components/ui/OpeningHours";
 import { Reveal } from "@/components/ui/Reveal";
 
-export function LocationTeaser() {
+/**
+ * Dirección, horarios y contacto sin salir del inicio: son las tres cosas
+ * que más se buscan y no deberían obligar a entrar a /contacto.
+ */
+export async function LocationTeaser() {
+  const settings = await getSettings();
+
   return (
-    <section className="bg-cream py-20 sm:py-28">
+    <section className="bg-cream py-16 sm:py-20">
       <Container className="grid items-center gap-10 lg:grid-cols-2">
         <Reveal>
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-red">Dónde estamos</p>
           <h2 className="mt-3 font-display text-3xl text-carbon sm:text-4xl">Te esperamos en Burzaco</h2>
           <p className="mt-4 flex items-center gap-2 text-base text-muted">
-            <MapPin className="h-5 w-5 text-red" aria-hidden="true" />
+            <MapPin className="h-5 w-5 shrink-0 text-red" aria-hidden="true" />
             {siteConfig.address.full}
           </p>
+
+          <div className="mt-5">
+            <OpeningHours hours={settings.openingHours} />
+          </div>
+
           <div className="mt-7 flex flex-wrap gap-3">
             <LinkButton href={siteConfig.maps.directionsUrl} variant="primary" size="md">
               Cómo llegar
             </LinkButton>
-            <LinkButton href={whatsAppMessageGeneral()} variant="secondary" size="md" className="border-carbon text-carbon hover:bg-carbon hover:text-warm-white">
+            <LinkButton
+              href={whatsAppMessageGeneral()}
+              variant="secondary"
+              size="md"
+              className="border-carbon text-carbon hover:bg-carbon hover:text-warm-white"
+            >
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
               WhatsApp
             </LinkButton>
@@ -31,17 +49,19 @@ export function LocationTeaser() {
           </div>
         </Reveal>
 
-        <Reveal delay={100}>
-          <div className="aspect-[4/3] w-full overflow-hidden rounded-[var(--radius-card)] shadow-warm">
-            <iframe
-              title="Ubicación de Las Pastas de la Nona en Google Maps"
-              src={siteConfig.maps.embedUrl}
-              className="h-full w-full border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-        </Reveal>
+        {settings.googleMapsUrl ? (
+          <Reveal delay={100}>
+            <div className="aspect-[4/3] w-full overflow-hidden rounded-[var(--radius-card)] shadow-warm">
+              <iframe
+                title="Ubicación de Las Pastas de la Nona en Google Maps"
+                src={settings.googleMapsUrl}
+                className="h-full w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </Reveal>
+        ) : null}
       </Container>
     </section>
   );

@@ -8,6 +8,8 @@ interface SiteImageProps {
   priority?: boolean;
   /** Sobreescribe el texto alternativo cargado desde el panel. */
   alt?: string;
+  /** Color del marco mientras el slot no tiene foto. */
+  tone?: "dark" | "light";
 }
 
 /**
@@ -15,6 +17,15 @@ interface SiteImageProps {
  * `src/constants/site-images.ts`). Si el slot todavía no tiene foto,
  * `PhotoFrame` muestra el placeholder de marca.
  */
-export function SiteImage({ image, className, sizes, priority, alt }: SiteImageProps) {
-  return <PhotoFrame src={image.src} alt={alt ?? image.alt} className={className} sizes={sizes} priority={priority} />;
+export function SiteImage({ image, className, sizes, priority, alt, tone }: SiteImageProps) {
+  return (
+    <PhotoFrame
+      src={image.src}
+      alt={alt ?? image.alt}
+      className={className}
+      sizes={sizes}
+      priority={priority}
+      tone={tone}
+    />
+  );
 }

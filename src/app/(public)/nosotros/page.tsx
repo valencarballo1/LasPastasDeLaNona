@@ -38,6 +38,7 @@ export default async function NosotrosPage() {
           image={images["about.main"]}
           className="aspect-[4/5] w-full rounded-[var(--radius-card)] shadow-warm"
           sizes="(min-width: 1024px) 50vw, 100vw"
+          tone="light"
         />
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-red">Nuestro origen</p>

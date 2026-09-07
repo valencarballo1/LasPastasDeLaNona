@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { X } from "lucide-react";
+import { MapPin, MessageCircle, X } from "lucide-react";
 import { useEffect } from "react";
 import { mainNavLinks } from "@/constants/nav";
 import { routes } from "@/constants/routes";
+import { siteConfig } from "@/config/site";
+import { whatsAppMessageGeneral } from "@/lib/whatsapp";
 import { LinkButton } from "@/components/ui/Button";
 
 interface MobileMenuProps {
@@ -60,9 +62,24 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           ))}
         </nav>
 
-        <LinkButton href={routes.carta} variant="primary" size="lg" className="mt-auto w-full" onClick={onClose}>
-          Ver carta
-        </LinkButton>
+        {/* Lo que más se busca desde el celular: la carta y escribirnos. */}
+        <div className="mt-auto flex flex-col gap-3">
+          <LinkButton href={routes.carta} variant="primary" size="lg" className="w-full" onClick={onClose}>
+            Ver carta
+          </LinkButton>
+          <LinkButton href={whatsAppMessageGeneral()} variant="secondary" size="lg" className="w-full">
+            <MessageCircle className="h-5 w-5" aria-hidden="true" />
+            Pedir por WhatsApp
+          </LinkButton>
+          <Link
+            href={routes.contacto}
+            onClick={onClose}
+            className="flex items-center justify-center gap-2 py-1 text-sm text-cream/70 hover:text-gold"
+          >
+            <MapPin className="h-4 w-4 text-gold" aria-hidden="true" />
+            {siteConfig.address.street}, {siteConfig.address.city}
+          </Link>
+        </div>
       </div>
     </div>
   );

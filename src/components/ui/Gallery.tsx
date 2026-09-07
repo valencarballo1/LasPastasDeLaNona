@@ -14,6 +14,8 @@ export function Gallery({ images, className }: { images: GalleryImage[]; classNa
           key={`${image.alt}-${index}`}
           src={image.src}
           alt={image.alt}
+          tone="light"
+          sizes="(min-width: 640px) 33vw, 50vw"
           className={cn(
             "aspect-square rounded-[var(--radius-card)]",
             index === 0 && "col-span-2 row-span-2 aspect-auto sm:aspect-square",

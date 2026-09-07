@@ -38,7 +38,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   return (
     <Container className="grid gap-10 py-32 lg:grid-cols-2 lg:gap-16 lg:py-40">
-      <PhotoFrame src={product.imageUrl} alt={product.name} className="aspect-[4/3] w-full rounded-[var(--radius-card)] shadow-warm" priority />
+      <PhotoFrame
+        src={product.imageUrl}
+        alt={product.name}
+        className="aspect-[4/3] w-full rounded-[var(--radius-card)] shadow-warm"
+        sizes="(min-width: 1024px) 50vw, 100vw"
+        tone="light"
+        priority
+      />
 
       <div>
         {category ? <Badge tone="red">{category.name}</Badge> : null}

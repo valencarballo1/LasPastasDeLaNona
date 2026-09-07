@@ -5,6 +5,10 @@ import { Container } from "@/components/ui/Container";
 /**
  * Estructura preparada para opiniones reales (Google Reviews / Instagram).
  * A propósito no incluye testimonios inventados.
+ *
+ * NO está montada en la home: tres tarjetas vacías que dicen "próximamente"
+ * ocupan una pantalla sin decirle nada al cliente. Volver a agregarla en
+ * `src/app/(public)/page.tsx` cuando haya opiniones reales que mostrar.
  */
 export function TestimonialsSection() {
   return (

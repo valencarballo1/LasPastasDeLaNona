@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { UtensilsCrossed } from "lucide-react";
+import { UtensilsCrossed, Wheat } from "lucide-react";
 import { isInlineImageUrl } from "@/lib/image-file";
 import { cn } from "@/lib/utils";
 
@@ -10,6 +10,12 @@ interface PhotoFrameProps {
   sizes?: string;
   priority?: boolean;
   fill?: boolean;
+  /**
+   * Color del marco que se muestra mientras no hay foto. `dark` para
+   * fondos oscuros (portadas), `light` para bloques sobre crema —
+   * un rectángulo negro sobre fondo claro se lee como un agujero.
+   */
+  tone?: "dark" | "light";
 }
 
 /**
@@ -17,18 +23,30 @@ interface PhotoFrameProps {
  * fotografía real: en vez de romper el layout o usar stock, muestra un
  * placeholder de marca hasta que se cargue la imagen definitiva.
  */
-export function PhotoFrame({ src, alt, className, sizes, priority, fill = true }: PhotoFrameProps) {
+export function PhotoFrame({
+  src,
+  alt,
+  className,
+  sizes,
+  priority,
+  fill = true,
+  tone = "dark",
+}: PhotoFrameProps) {
   if (!src) {
+    const isDark = tone === "dark";
+    const Icon = isDark ? UtensilsCrossed : Wheat;
+
     return (
       <div
         className={cn(
-          "texture-brick flex items-center justify-center bg-carbon text-gold/50",
+          "flex items-center justify-center",
+          isDark ? "texture-brick bg-carbon text-gold/50" : "texture-paper bg-cream text-red/25",
           className,
         )}
         role="img"
         aria-label={alt}
       >
-        <UtensilsCrossed className="h-10 w-10" strokeWidth={1.25} />
+        <Icon className="h-9 w-9" strokeWidth={1.25} />
       </div>
     );
   }

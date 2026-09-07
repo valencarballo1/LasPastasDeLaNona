@@ -79,6 +79,17 @@ components/ui/SiteImage    → pinta un slot (o el placeholder de marca si todav
 
 Las páginas públicas piden el mapa una sola vez (`getSiteImageMap()`) y lo bajan por props a cada sección, para no multiplicar llamadas a la API.
 
+### Comportamiento sin fotos
+
+Toda la web tiene que verse terminada aunque todavía no haya una sola foto cargada. La regla es que **nada reserva un hueco vacío**:
+
+- Los bloques editoriales (`StorySection`, `DailyMakingSection`) pasan a una columna centrada.
+- La galería del inicio no se muestra si ningún slot tiene foto; el teaser de Instagram deja solo el enlace.
+- Las tarjetas de plato (`ProductCard`) y las líneas de la carta (`MenuItem`) se compactan y mueven sus distintivos al cuerpo.
+- Donde el marco sí es estructural (portadas, tarjetas de "Elegí tu experiencia"), `PhotoFrame` usa `tone`: oscuro sobre fondos oscuros, claro sobre crema — un rectángulo negro sobre fondo claro se lee como un agujero.
+
+El orden de la home está pensado para el cliente antes que para el relato de marca: portada → accesos rápidos (`QuickAccess`) → destacados de la carta → fábrica y restaurante → historia → eventos → galería → dónde estamos.
+
 ### Subida de archivos
 
 `MediaRepository.upload(file)` es la única puerta de entrada. Con `DATA_SOURCE=api` hace `POST /api/admin/media` (multipart) y guarda la URL que devuelve el backend. Con `DATA_SOURCE=mock` no hay dónde guardar el archivo, así que se reduce en el navegador y se guarda como data URL — suficiente para ver el panel funcionando de punta a punta. `PhotoFrame`, `AdminThumbnail` y `BrandLogo` detectan esas URLs embebidas (`data:`/`blob:`) y las pintan con `<img>`, porque el optimizador de `next/image` no las acepta.
